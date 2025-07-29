@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 class OpenAIClient:
     """Client for OpenAI API-based classification"""
     
-    def __init__(self, api_key: str, model: str = "gpt-4o-mini", base_url: Optional[str] = None):
+    def __init__(self, api_key: str, model: str = "gpt-4o-mini", base_url: str = None):
         """
         Initialize OpenAI client
         
@@ -30,34 +30,6 @@ class OpenAIClient:
         self.base_url = base_url or "https://api.openai.com/v1"
         
         logger.info(f"OpenAI client initialized - model: {model}")
-
-    def _clean_response(self, response: str) -> str:
-        """Clean up AI response, especially for DeepSeek-R1 thinking tags"""
-        import re
-        
-        cleaned = response.strip()
-        
-        # Handle DeepSeek-R1 thinking tags
-        if '<think>' in cleaned:
-            # Remove everything from <think> to </think>
-            cleaned = re.sub(r'<think>.*?</think>', '', cleaned, flags=re.DOTALL)
-            cleaned = cleaned.strip()
-        
-        # Remove any remaining XML-like tags
-        cleaned = re.sub(r'<[^>]+>', '', cleaned).strip()
-        
-        # If the response is still too long or contains English explanations,
-        # try to extract just the classification part
-        if len(cleaned) > 50 or any(word in cleaned.lower() for word in ['step', 'analyze', 'break', 'classify', 'category']):
-            # Try to find Chinese classification terms at the end
-            lines = cleaned.split('\n')
-            for line in reversed(lines):
-                line = line.strip()
-                if line and len(line) < 20 and not any(word in line.lower() for word in ['step', 'analyze', 'break']):
-                    cleaned = line
-                    break
-        
-        return cleaned
 
     async def classify(self, prompt: str) -> Optional[str]:
         """
@@ -96,9 +68,7 @@ class OpenAIClient:
                 "presence_penalty": 0
             }
             
-            # Set timeout to prevent hanging
-            timeout = aiohttp.ClientTimeout(total=30)  # 30 seconds timeout
-            async with aiohttp.ClientSession(timeout=timeout) as session:
+            async with aiohttp.ClientSession() as session:
                 async with session.post(
                     f"{self.base_url}/chat/completions",
                     headers=headers,
@@ -107,11 +77,7 @@ class OpenAIClient:
                     if response.status == 200:
                         result = await response.json()
                         if result.get("choices") and len(result["choices"]) > 0:
-                            raw_classification = result["choices"][0]["message"]["content"].strip()
-                            logger.info(f"OpenAI raw response: {raw_classification}")
-                            
-                            # Clean up the response (handle DeepSeek-R1 thinking tags)
-                            classification = self._clean_response(raw_classification)
+                            classification = result["choices"][0]["message"]["content"].strip()
                             logger.info(f"OpenAI classification result: {classification}")
                             return classification
                         else:
@@ -122,9 +88,6 @@ class OpenAIClient:
                         logger.error(f"OpenAI API error {response.status}: {error_text}")
                         return None
                         
-        except asyncio.TimeoutError:
-            logger.error("OpenAI classification failed: Connection timeout")
-            return None
         except Exception as e:
             logger.error(f"OpenAI classification failed: {str(e)}")
             return None
@@ -151,9 +114,7 @@ class OpenAIClient:
                 "temperature": 0
             }
             
-            # Set timeout to prevent hanging
-            timeout = aiohttp.ClientTimeout(total=15)  # 15 seconds timeout for connection test
-            async with aiohttp.ClientSession(timeout=timeout) as session:
+            async with aiohttp.ClientSession() as session:
                 async with session.post(
                     f"{self.base_url}/chat/completions",
                     headers=headers,
@@ -162,8 +123,7 @@ class OpenAIClient:
                     if response.status == 200:
                         result = await response.json()
                         if result.get("choices") and len(result["choices"]) > 0:
-                            raw_response = result["choices"][0]["message"]["content"].strip()
-                            response_text = self._clean_response(raw_response)
+                            response_text = result["choices"][0]["message"]["content"].strip()
                             logger.info(f"OpenAI connection test successful: {response_text}")
                             return True
                         else:
@@ -174,9 +134,6 @@ class OpenAIClient:
                         logger.error(f"OpenAI connection test failed {response.status}: {error_text}")
                         return False
                         
-        except asyncio.TimeoutError:
-            logger.error("OpenAI connection test failed: Connection timeout")
-            return False
         except Exception as e:
             logger.error(f"OpenAI connection test failed: {str(e)}")
             return False 

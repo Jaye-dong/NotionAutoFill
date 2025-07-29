@@ -7,7 +7,6 @@ from typing import List, Optional, Dict, Any
 from datetime import datetime, date
 import aiohttp
 import json
-import asyncio
 
 logger = logging.getLogger(__name__)
 
@@ -25,8 +24,6 @@ class NotionClient:
             "Content-Type": "application/json",
             "Notion-Version": "2022-06-28"
         }
-        # Set default timeout for all requests
-        self.timeout = aiohttp.ClientTimeout(total=30)  # 30 seconds timeout
         logger.info("Notion client initialized")
     
     async def get_time_records(self, target_date: str) -> List[Dict[str, Any]]:
@@ -47,7 +44,7 @@ class NotionClient:
             # Make API request
             url = f"{self.base_url}/databases/{self.database_id}/query"
             
-            async with aiohttp.ClientSession(timeout=self.timeout) as session:
+            async with aiohttp.ClientSession() as session:
                 async with session.post(url, headers=self.headers, json=filter_query) as response:
                     if response.status == 200:
                         data = await response.json()
@@ -60,9 +57,6 @@ class NotionClient:
                         logger.error(f"Failed to fetch records: {response.status} - {error_text}")
                         return []
                         
-        except asyncio.TimeoutError:
-            logger.error("Failed to fetch time records: Connection timeout")
-            return []
         except Exception as e:
             logger.error(f"Error fetching time records: {str(e)}")
             return []
@@ -85,7 +79,7 @@ class NotionClient:
             
             url = f"{self.base_url}/pages/{record_id}"
             
-            async with aiohttp.ClientSession(timeout=self.timeout) as session:
+            async with aiohttp.ClientSession() as session:
                 async with session.patch(url, headers=self.headers, json=update_data) as response:
                     if response.status == 200:
                         logger.info(f"Successfully updated record {record_id}")
@@ -95,9 +89,6 @@ class NotionClient:
                         logger.error(f"Failed to update record {record_id}: {response.status} - {error_text}")
                         return False
                         
-        except asyncio.TimeoutError:
-            logger.error(f"Failed to update record {record_id}: Connection timeout")
-            return False
         except Exception as e:
             logger.error(f"Error updating record {record_id}: {str(e)}")
             return False
@@ -107,7 +98,7 @@ class NotionClient:
         try:
             url = f"{self.base_url}/databases/{self.database_id}"
             
-            async with aiohttp.ClientSession(timeout=self.timeout) as session:
+            async with aiohttp.ClientSession() as session:
                 async with session.get(url, headers=self.headers) as response:
                     if response.status == 200:
                         data = await response.json()
@@ -118,9 +109,6 @@ class NotionClient:
                         logger.error(f"Connection test failed: {response.status} - {error_text}")
                         return False
                         
-        except asyncio.TimeoutError:
-            logger.error("Connection test failed: Connection timeout")
-            return False
         except Exception as e:
             logger.error(f"Error testing connection: {str(e)}")
             return False
@@ -132,7 +120,7 @@ class NotionClient:
             
             url = f"{self.base_url}/databases/{self.database_id}"
             
-            async with aiohttp.ClientSession(timeout=self.timeout) as session:
+            async with aiohttp.ClientSession() as session:
                 async with session.get(url, headers=self.headers) as response:
                     if response.status == 200:
                         data = await response.json()
@@ -153,9 +141,6 @@ class NotionClient:
                         logger.error(f"Failed to get database schema: {response.status} - {error_text}")
                         return []
                         
-        except asyncio.TimeoutError:
-            logger.error("Failed to fetch classification options: Connection timeout")
-            return []
         except Exception as e:
             logger.error(f"Error fetching classification options: {str(e)}")
             return []
@@ -173,7 +158,7 @@ class NotionClient:
             
             url = f"{self.base_url}/pages"
             
-            async with aiohttp.ClientSession(timeout=self.timeout) as session:
+            async with aiohttp.ClientSession() as session:
                 async with session.post(url, headers=self.headers, json=request_data) as response:
                     if response.status == 200:
                         data = await response.json()
@@ -184,9 +169,6 @@ class NotionClient:
                         logger.error(f"Failed to create record: {response.status} - {error_text}")
                         return None
                         
-        except asyncio.TimeoutError:
-            logger.error("Failed to create record: Connection timeout")
-            return None
         except Exception as e:
             logger.error(f"Error creating record: {str(e)}")
             return None 
