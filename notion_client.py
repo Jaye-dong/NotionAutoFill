@@ -61,21 +61,31 @@ class NotionClient:
             logger.error(f"Error fetching time records: {str(e)}")
             return []
     
-    async def update_record_classification(self, record_id: str, classification: str) -> bool:
-        """Update the classification of a time record"""
+    async def update_record_classification_and_type(self, record_id: str, classification: str, time_type: str) -> bool:
+        """Update the classification and time type of a time record"""
         try:
-            logger.info(f"Updating record {record_id} with classification: {classification}")
+            logger.info(f"Updating record {record_id} with classification: {classification} and time type: {time_type}")
             
-            # Use the correct property name for this database
+            # Build update data for both classification and time type
             update_data = {
-                "properties": {
-                    "分类": {
-                        "select": {
-                            "name": classification
-                        }
+                "properties": {}
+            }
+            
+            # Add classification if provided
+            if classification:
+                update_data["properties"]["分类"] = {
+                    "select": {
+                        "name": classification
                     }
                 }
-            }
+            
+            # Add time type if provided
+            if time_type:
+                update_data["properties"]["时间类型"] = {
+                    "select": {
+                        "name": time_type
+                    }
+                }
             
             url = f"{self.base_url}/pages/{record_id}"
             
@@ -145,6 +155,38 @@ class NotionClient:
             logger.error(f"Error fetching classification options: {str(e)}")
             return []
     
+    async def get_time_type_options(self) -> List[str]:
+        """Get available time type options from the database schema"""
+        try:
+            logger.info("Fetching time type options from database schema")
+            
+            url = f"{self.base_url}/databases/{self.database_id}"
+            
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url, headers=self.headers) as response:
+                    if response.status == 200:
+                        data = await response.json()
+                        properties = data.get('properties', {})
+                        
+                        # Get options from 时间类型 field
+                        time_type_prop = properties.get('时间类型')
+                        if time_type_prop and time_type_prop.get('type') == 'select':
+                            options = time_type_prop.get('select', {}).get('options', [])
+                            option_names = [option.get('name', '') for option in options if option.get('name')]
+                            logger.info(f"Found {len(option_names)} time type options: {option_names}")
+                            return option_names
+                        else:
+                            logger.warning("时间类型 field not found or not a select field")
+                            return []
+                    else:
+                        error_text = await response.text()
+                        logger.error(f"Failed to get database schema: {response.status} - {error_text}")
+                        return []
+                        
+        except Exception as e:
+            logger.error(f"Error fetching time type options: {str(e)}")
+            return []
+    
     async def create_record(self, properties: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """Create a new record in the database"""
         try:
@@ -171,4 +213,4 @@ class NotionClient:
                         
         except Exception as e:
             logger.error(f"Error creating record: {str(e)}")
-            return None 
+            return None
