@@ -1,0 +1,1132 @@
+2025-06-25 15:19:23,448 - __main__ - ERROR - Failed to initialize classifier: OPENAI_API_KEY environment variable is required
+2025-06-25 15:41:14,822 - __main__ - ERROR - Failed to initialize classifier: OPENAI_API_KEY environment variable is required
+2025-06-25 15:54:35,929 - notion_client - INFO - Notion client initialized
+2025-06-25 15:54:35,929 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-25 15:54:35,930 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-25 15:54:35,930 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-25 15:54:35,930 - __main__ - INFO - Processing time records for date: 2025-06-25
+2025-06-25 15:54:35,930 - openai_client - INFO - Testing OpenAI connection...
+2025-06-25 15:54:39,592 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-25 15:54:39,593 - notion_client - INFO - Fetching classification options from database schema
+2025-06-25 15:54:41,272 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 15:54:41,273 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 15:54:41,273 - notion_client - INFO - Fetching time records for date: 2025-06-25
+2025-06-25 15:54:44,178 - notion_client - INFO - Successfully fetched 2 time records
+2025-06-25 15:54:44,179 - __main__ - INFO - Found 2 time records for 2025-06-25
+2025-06-25 15:54:44,180 - __main__ - INFO - Record 85898b7e-55dc-4045-8514-b47aea13bc08 already classified as: 休息/放松
+2025-06-25 15:54:44,180 - __main__ - INFO - Record b9dfffe2-ca99-4be3-ace6-5c6af4cbcd5d already classified as: 通勤
+2025-06-25 15:54:44,181 - __main__ - INFO - Classification complete: 0 records classified
+2025-06-25 15:54:44,181 - __main__ - INFO - Classification completed successfully
+2025-06-25 15:59:42,389 - notion_client - INFO - Notion client initialized
+2025-06-25 15:59:42,390 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-25 15:59:42,390 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-25 15:59:42,390 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-25 15:59:42,401 - __main__ - INFO - Processing time records for date: 2024-06-24
+2025-06-25 15:59:42,401 - openai_client - INFO - Testing OpenAI connection...
+2025-06-25 15:59:46,619 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-25 15:59:46,621 - notion_client - INFO - Fetching classification options from database schema
+2025-06-25 15:59:48,796 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 15:59:48,797 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 15:59:48,798 - notion_client - INFO - Fetching time records for date: 2024-06-24
+2025-06-25 15:59:51,022 - notion_client - INFO - Successfully fetched 0 time records
+2025-06-25 15:59:51,023 - __main__ - INFO - No time records found for 2024-06-24
+2025-06-25 15:59:51,024 - __main__ - INFO - Classification completed successfully
+2025-06-25 16:00:09,724 - notion_client - INFO - Notion client initialized
+2025-06-25 16:00:09,725 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-25 16:00:09,725 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-25 16:00:09,725 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-25 16:00:09,730 - __main__ - INFO - Processing time records for date: 2025-06-24
+2025-06-25 16:00:09,731 - openai_client - INFO - Testing OpenAI connection...
+2025-06-25 16:00:13,357 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-25 16:00:13,358 - notion_client - INFO - Fetching classification options from database schema
+2025-06-25 16:00:14,578 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 16:00:14,579 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 16:00:14,580 - notion_client - INFO - Fetching time records for date: 2025-06-24
+2025-06-25 16:00:16,159 - notion_client - INFO - Successfully fetched 3 time records
+2025-06-25 16:00:16,160 - __main__ - INFO - Found 3 time records for 2025-06-24
+2025-06-25 16:00:16,160 - __main__ - WARNING - Record c9ae79d9-4849-474a-b50a-095920f6cc85 has no content, skipping
+2025-06-25 16:00:16,160 - __main__ - WARNING - Record 28b71cc1-38ae-4df8-9db3-e9c740851576 has no content, skipping
+2025-06-25 16:00:16,161 - __main__ - WARNING - Record 0f5c53b0-b8ed-4aee-bf8d-22794aba6e3a has no content, skipping
+2025-06-25 16:00:16,161 - __main__ - INFO - Classification complete: 0 records classified
+2025-06-25 16:00:16,161 - __main__ - INFO - Classification completed successfully
+2025-06-25 16:07:01,914 - notion_client - INFO - Notion client initialized
+2025-06-25 16:07:01,914 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-25 16:07:01,915 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-25 16:07:01,915 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-25 16:07:01,921 - __main__ - INFO - Processing time records for date: 2025-06-25
+2025-06-25 16:07:01,922 - openai_client - INFO - Testing OpenAI connection...
+2025-06-25 16:07:07,147 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-25 16:07:07,148 - notion_client - INFO - Fetching classification options from database schema
+2025-06-25 16:07:07,751 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 16:07:07,751 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 16:07:07,752 - notion_client - INFO - Fetching time records for date: 2025-06-25
+2025-06-25 16:07:08,700 - notion_client - INFO - Successfully fetched 3 time records
+2025-06-25 16:07:08,701 - __main__ - INFO - Found 3 time records for 2025-06-25
+2025-06-25 16:07:08,701 - __main__ - INFO - Processing record 21d73009-2281-8131-bed0-fd22d6a7feed: 写代码开发新功能...
+2025-06-25 16:07:08,701 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-25 16:07:12,986 - openai_client - INFO - OpenAI classification result: 工作
+2025-06-25 16:07:12,987 - __main__ - INFO - Exact match found: 工作
+2025-06-25 16:07:12,987 - notion_client - INFO - Updating record 21d73009-2281-8131-bed0-fd22d6a7feed with classification: 工作
+2025-06-25 16:07:13,961 - notion_client - INFO - Successfully updated record 21d73009-2281-8131-bed0-fd22d6a7feed
+2025-06-25 16:07:13,962 - __main__ - INFO - Successfully classified record 21d73009-2281-8131-bed0-fd22d6a7feed as: 工作
+2025-06-25 16:07:13,962 - __main__ - INFO - Record 85898b7e-55dc-4045-8514-b47aea13bc08 already classified as: 休息/放松
+2025-06-25 16:07:13,962 - __main__ - INFO - Record b9dfffe2-ca99-4be3-ace6-5c6af4cbcd5d already classified as: 通勤
+2025-06-25 16:07:13,962 - __main__ - INFO - Classification complete: 1 records classified
+2025-06-25 16:07:13,962 - __main__ - INFO - Classification completed successfully
+2025-06-25 16:08:00,595 - notion_client - INFO - Notion client initialized
+2025-06-25 16:08:00,595 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-25 16:08:00,596 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-25 16:08:00,596 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-25 16:08:00,601 - __main__ - INFO - Processing time records for date: 2025-06-24
+2025-06-25 16:08:00,601 - openai_client - INFO - Testing OpenAI connection...
+2025-06-25 16:08:05,006 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-25 16:08:05,007 - notion_client - INFO - Fetching classification options from database schema
+2025-06-25 16:08:06,191 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 16:08:06,192 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 16:08:06,192 - notion_client - INFO - Fetching time records for date: 2025-06-24
+2025-06-25 16:08:07,677 - notion_client - INFO - Successfully fetched 3 time records
+2025-06-25 16:08:07,678 - __main__ - INFO - Found 3 time records for 2025-06-24
+2025-06-25 16:08:07,679 - __main__ - INFO - Processing record c9ae79d9-4849-474a-b50a-095920f6cc85: 午饭...
+2025-06-25 16:08:07,681 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-25 16:08:10,788 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-06-25 16:08:10,788 - __main__ - INFO - Exact match found: 休息/放松
+2025-06-25 16:08:10,789 - notion_client - INFO - Updating record c9ae79d9-4849-474a-b50a-095920f6cc85 with classification: 休息/放松
+2025-06-25 16:08:13,473 - notion_client - INFO - Successfully updated record c9ae79d9-4849-474a-b50a-095920f6cc85
+2025-06-25 16:08:13,475 - __main__ - INFO - Successfully classified record c9ae79d9-4849-474a-b50a-095920f6cc85 as: 休息/放松
+2025-06-25 16:08:13,476 - __main__ - INFO - Processing record 28b71cc1-38ae-4df8-9db3-e9c740851576: 打车去公司...
+2025-06-25 16:08:13,476 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-25 16:08:17,125 - openai_client - INFO - OpenAI classification result: 通勤
+2025-06-25 16:08:17,127 - __main__ - INFO - Exact match found: 通勤
+2025-06-25 16:08:17,127 - notion_client - INFO - Updating record 28b71cc1-38ae-4df8-9db3-e9c740851576 with classification: 通勤
+2025-06-25 16:08:18,837 - notion_client - INFO - Successfully updated record 28b71cc1-38ae-4df8-9db3-e9c740851576
+2025-06-25 16:08:18,839 - __main__ - INFO - Successfully classified record 28b71cc1-38ae-4df8-9db3-e9c740851576 as: 通勤
+2025-06-25 16:08:18,839 - __main__ - INFO - Processing record 0f5c53b0-b8ed-4aee-bf8d-22794aba6e3a: 处理viewer的cache开关问题...
+2025-06-25 16:08:18,840 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-25 16:08:23,000 - openai_client - INFO - OpenAI classification result: 工作
+2025-06-25 16:08:23,002 - __main__ - INFO - Exact match found: 工作
+2025-06-25 16:08:23,002 - notion_client - INFO - Updating record 0f5c53b0-b8ed-4aee-bf8d-22794aba6e3a with classification: 工作
+2025-06-25 16:08:28,443 - notion_client - INFO - Successfully updated record 0f5c53b0-b8ed-4aee-bf8d-22794aba6e3a
+2025-06-25 16:08:28,445 - __main__ - INFO - Successfully classified record 0f5c53b0-b8ed-4aee-bf8d-22794aba6e3a as: 工作
+2025-06-25 16:08:28,446 - __main__ - INFO - Classification complete: 3 records classified
+2025-06-25 16:08:28,447 - __main__ - INFO - Classification completed successfully
+2025-06-25 16:08:52,666 - notion_client - INFO - Notion client initialized
+2025-06-25 16:08:52,667 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-25 16:08:52,667 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-25 16:08:52,668 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-25 16:08:52,675 - __main__ - INFO - Processing time records for date: 2025-06-23
+2025-06-25 16:08:52,675 - openai_client - INFO - Testing OpenAI connection...
+2025-06-25 16:08:56,227 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-25 16:08:56,229 - notion_client - INFO - Fetching classification options from database schema
+2025-06-25 16:08:57,419 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 16:08:57,420 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 16:08:57,420 - notion_client - INFO - Fetching time records for date: 2025-06-23
+2025-06-25 16:08:58,192 - notion_client - INFO - Successfully fetched 7 time records
+2025-06-25 16:08:58,193 - __main__ - INFO - Found 7 time records for 2025-06-23
+2025-06-25 16:08:58,193 - __main__ - INFO - Processing record b84be827-2c18-48fa-9d25-f6b1e3c4f0ee: 看鲁冲的问题...
+2025-06-25 16:08:58,193 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-25 16:09:02,249 - openai_client - INFO - OpenAI classification result: 工作
+2025-06-25 16:09:02,250 - __main__ - INFO - Exact match found: 工作
+2025-06-25 16:09:02,250 - notion_client - INFO - Updating record b84be827-2c18-48fa-9d25-f6b1e3c4f0ee with classification: 工作
+2025-06-25 16:09:08,336 - notion_client - INFO - Successfully updated record b84be827-2c18-48fa-9d25-f6b1e3c4f0ee
+2025-06-25 16:09:08,338 - __main__ - INFO - Successfully classified record b84be827-2c18-48fa-9d25-f6b1e3c4f0ee as: 工作
+2025-06-25 16:09:08,339 - __main__ - INFO - Processing record 0067ce8f-911e-441b-aad1-39e3c43cbef8: 看手机...
+2025-06-25 16:09:08,339 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-25 16:09:12,069 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-06-25 16:09:12,070 - __main__ - INFO - Exact match found: 休息/放松
+2025-06-25 16:09:12,070 - notion_client - INFO - Updating record 0067ce8f-911e-441b-aad1-39e3c43cbef8 with classification: 休息/放松
+2025-06-25 16:09:13,903 - notion_client - INFO - Successfully updated record 0067ce8f-911e-441b-aad1-39e3c43cbef8
+2025-06-25 16:09:13,904 - __main__ - INFO - Successfully classified record 0067ce8f-911e-441b-aad1-39e3c43cbef8 as: 休息/放松
+2025-06-25 16:09:13,904 - __main__ - INFO - Processing record d830fd30-515b-4155-822b-21fc806765ef: 午饭...
+2025-06-25 16:09:13,904 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-25 16:09:17,971 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-06-25 16:09:17,972 - __main__ - INFO - Exact match found: 休息/放松
+2025-06-25 16:09:17,973 - notion_client - INFO - Updating record d830fd30-515b-4155-822b-21fc806765ef with classification: 休息/放松
+2025-06-25 16:09:19,019 - notion_client - INFO - Successfully updated record d830fd30-515b-4155-822b-21fc806765ef
+2025-06-25 16:09:19,020 - __main__ - INFO - Successfully classified record d830fd30-515b-4155-822b-21fc806765ef as: 休息/放松
+2025-06-25 16:09:19,021 - __main__ - INFO - Processing record 5b52e5ce-5e6c-4494-934a-b1683c32af3c: 查看EDA前沿消息...
+2025-06-25 16:09:19,021 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-25 16:09:22,485 - openai_client - INFO - OpenAI classification result: 学习
+2025-06-25 16:09:22,486 - __main__ - INFO - Exact match found: 学习
+2025-06-25 16:09:22,487 - notion_client - INFO - Updating record 5b52e5ce-5e6c-4494-934a-b1683c32af3c with classification: 学习
+2025-06-25 16:09:25,875 - notion_client - INFO - Successfully updated record 5b52e5ce-5e6c-4494-934a-b1683c32af3c
+2025-06-25 16:09:25,876 - __main__ - INFO - Successfully classified record 5b52e5ce-5e6c-4494-934a-b1683c32af3c as: 学习
+2025-06-25 16:09:25,876 - __main__ - INFO - Record 5f458536-1c8d-4500-bce5-266be329d2fb already classified as: 通勤
+2025-06-25 16:09:25,877 - __main__ - INFO - Record dd010e5a-7170-48b0-8b0a-146d54339024 already classified as: 通勤
+2025-06-25 16:09:25,877 - __main__ - INFO - Record 33baf584-8e0a-4fda-95f8-037deedd0fe2 already classified as: 通勤
+2025-06-25 16:09:25,878 - __main__ - INFO - Classification complete: 4 records classified
+2025-06-25 16:09:25,878 - __main__ - INFO - Classification completed successfully
+2025-06-25 16:48:26,903 - notion_client - INFO - Notion client initialized
+2025-06-25 16:48:26,903 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-25 16:48:26,903 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-25 16:48:26,904 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-25 16:48:26,904 - __main__ - INFO - Processing time records for date: 2025-06-25
+2025-06-25 16:48:26,904 - openai_client - INFO - Testing OpenAI connection...
+2025-06-25 16:48:30,458 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-25 16:48:30,459 - notion_client - INFO - Fetching classification options from database schema
+2025-06-25 16:48:31,701 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 16:48:31,702 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 16:48:31,702 - notion_client - INFO - Fetching time records for date: 2025-06-25
+2025-06-25 16:48:33,082 - notion_client - INFO - Successfully fetched 3 time records
+2025-06-25 16:48:33,083 - __main__ - INFO - Found 3 time records for 2025-06-25
+2025-06-25 16:48:33,083 - __main__ - INFO - Record 21d73009-2281-8131-bed0-fd22d6a7feed already classified as: 工作
+2025-06-25 16:48:33,084 - __main__ - INFO - Record 85898b7e-55dc-4045-8514-b47aea13bc08 already classified as: 休息/放松
+2025-06-25 16:48:33,084 - __main__ - INFO - Record b9dfffe2-ca99-4be3-ace6-5c6af4cbcd5d already classified as: 通勤
+2025-06-25 16:48:33,084 - __main__ - INFO - Classification complete: 0 records classified
+2025-06-25 16:48:33,084 - __main__ - INFO - Classification completed successfully
+2025-06-25 16:49:24,124 - notion_client - INFO - Notion client initialized
+2025-06-25 16:49:24,124 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-25 16:49:24,125 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-25 16:49:24,125 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-25 16:49:24,125 - __main__ - INFO - Processing time records for date: 2025-06-25
+2025-06-25 16:49:24,126 - openai_client - INFO - Testing OpenAI connection...
+2025-06-25 16:49:28,008 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-25 16:49:28,009 - notion_client - INFO - Fetching classification options from database schema
+2025-06-25 16:49:29,536 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 16:49:29,537 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 16:49:29,538 - notion_client - INFO - Fetching time records for date: 2025-06-25
+2025-06-25 16:49:31,712 - notion_client - INFO - Successfully fetched 4 time records
+2025-06-25 16:49:31,714 - __main__ - INFO - Found 4 time records for 2025-06-25
+2025-06-25 16:49:31,715 - __main__ - INFO - Processing record 611240a3-6403-4888-b167-c6aa943e73c5: 研究和开发AI自动判断时间分类的工具...
+2025-06-25 16:49:31,716 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-25 16:49:36,041 - openai_client - INFO - OpenAI classification result: 工作
+2025-06-25 16:49:36,042 - __main__ - INFO - Exact match found: 工作
+2025-06-25 16:49:36,043 - notion_client - INFO - Updating record 611240a3-6403-4888-b167-c6aa943e73c5 with classification: 工作
+2025-06-25 16:49:36,802 - notion_client - INFO - Successfully updated record 611240a3-6403-4888-b167-c6aa943e73c5
+2025-06-25 16:49:36,803 - __main__ - INFO - Successfully classified record 611240a3-6403-4888-b167-c6aa943e73c5 as: 工作
+2025-06-25 16:49:36,804 - __main__ - INFO - Record 21d73009-2281-8131-bed0-fd22d6a7feed already classified as: 工作
+2025-06-25 16:49:36,804 - __main__ - INFO - Record 85898b7e-55dc-4045-8514-b47aea13bc08 already classified as: 休息/放松
+2025-06-25 16:49:36,805 - __main__ - INFO - Record b9dfffe2-ca99-4be3-ace6-5c6af4cbcd5d already classified as: 通勤
+2025-06-25 16:49:36,806 - __main__ - INFO - Classification complete: 1 records classified
+2025-06-25 16:49:36,806 - __main__ - INFO - Classification completed successfully
+2025-06-25 20:17:36,849 - notion_client - INFO - Notion client initialized
+2025-06-25 20:17:36,849 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-25 20:17:36,849 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-25 20:17:36,849 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-25 20:17:36,849 - __main__ - INFO - Processing time records for date: 2025-06-25
+2025-06-25 20:17:36,849 - openai_client - INFO - Testing OpenAI connection...
+2025-06-25 20:17:41,290 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-25 20:17:41,291 - notion_client - INFO - Fetching classification options from database schema
+2025-06-25 20:17:46,755 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 20:17:46,757 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-25 20:17:46,757 - notion_client - INFO - Fetching time records for date: 2025-06-25
+2025-06-25 20:17:49,163 - notion_client - INFO - Successfully fetched 4 time records
+2025-06-25 20:17:49,164 - __main__ - INFO - Found 4 time records for 2025-06-25
+2025-06-25 20:17:49,164 - __main__ - INFO - Processing record 22a29409-00fd-4cd2-9af4-d818c5c10dd4: 看多机卡死问题如何解决...
+2025-06-25 20:17:49,173 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-25 20:17:52,565 - openai_client - INFO - OpenAI classification result: 工作
+2025-06-25 20:17:52,566 - __main__ - INFO - Exact match found: 工作
+2025-06-25 20:17:52,566 - notion_client - INFO - Updating record 22a29409-00fd-4cd2-9af4-d818c5c10dd4 with classification: 工作
+2025-06-25 20:17:53,406 - notion_client - INFO - Successfully updated record 22a29409-00fd-4cd2-9af4-d818c5c10dd4
+2025-06-25 20:17:53,407 - __main__ - INFO - Successfully classified record 22a29409-00fd-4cd2-9af4-d818c5c10dd4 as: 工作
+2025-06-25 20:17:53,407 - __main__ - INFO - Record 611240a3-6403-4888-b167-c6aa943e73c5 already classified as: 工作
+2025-06-25 20:17:53,407 - __main__ - INFO - Record 85898b7e-55dc-4045-8514-b47aea13bc08 already classified as: 休息/放松
+2025-06-25 20:17:53,407 - __main__ - INFO - Record b9dfffe2-ca99-4be3-ace6-5c6af4cbcd5d already classified as: 通勤
+2025-06-25 20:17:53,407 - __main__ - INFO - Classification complete: 1 records classified
+2025-06-25 20:17:53,407 - __main__ - INFO - Classification completed successfully
+2025-06-26 10:19:17,807 - notion_client - INFO - Notion client initialized
+2025-06-26 10:19:17,807 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-26 10:19:17,807 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-26 10:19:17,807 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-26 10:19:17,808 - __main__ - INFO - Processing time records for date: 2025-06-26
+2025-06-26 10:19:17,808 - openai_client - INFO - Testing OpenAI connection...
+2025-06-26 10:19:21,108 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-26 10:19:21,108 - notion_client - INFO - Fetching classification options from database schema
+2025-06-26 10:19:21,807 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-26 10:19:21,809 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-26 10:19:21,809 - notion_client - INFO - Fetching time records for date: 2025-06-26
+2025-06-26 10:19:23,171 - notion_client - INFO - Successfully fetched 2 time records
+2025-06-26 10:19:23,172 - __main__ - INFO - Found 2 time records for 2025-06-26
+2025-06-26 10:19:23,172 - __main__ - INFO - Processing record 14a0649b-85f4-4938-84d9-7d0a68eb97a1: 坐地铁去上班...
+2025-06-26 10:19:23,173 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-26 10:19:27,516 - openai_client - INFO - OpenAI classification result: 通勤
+2025-06-26 10:19:27,517 - __main__ - INFO - Exact match found: 通勤
+2025-06-26 10:19:27,517 - notion_client - INFO - Updating record 14a0649b-85f4-4938-84d9-7d0a68eb97a1 with classification: 通勤
+2025-06-26 10:19:28,244 - notion_client - INFO - Successfully updated record 14a0649b-85f4-4938-84d9-7d0a68eb97a1
+2025-06-26 10:19:28,245 - __main__ - INFO - Successfully classified record 14a0649b-85f4-4938-84d9-7d0a68eb97a1 as: 通勤
+2025-06-26 10:19:28,245 - __main__ - INFO - Processing record c4a87bbc-30fa-48fd-98c4-c29bdd875e2f: 和杜林看问题...
+2025-06-26 10:19:28,246 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-26 10:19:31,973 - openai_client - INFO - OpenAI classification result: 社交/家庭
+2025-06-26 10:19:31,974 - __main__ - INFO - Exact match found: 社交/家庭
+2025-06-26 10:19:31,974 - notion_client - INFO - Updating record c4a87bbc-30fa-48fd-98c4-c29bdd875e2f with classification: 社交/家庭
+2025-06-26 10:19:33,242 - notion_client - INFO - Successfully updated record c4a87bbc-30fa-48fd-98c4-c29bdd875e2f
+2025-06-26 10:19:33,243 - __main__ - INFO - Successfully classified record c4a87bbc-30fa-48fd-98c4-c29bdd875e2f as: 社交/家庭
+2025-06-26 10:19:33,243 - __main__ - INFO - Classification complete: 2 records classified
+2025-06-26 10:19:33,244 - __main__ - INFO - Classification completed successfully
+2025-06-26 10:22:21,347 - notion_client - INFO - Notion client initialized
+2025-06-26 10:22:21,348 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-26 10:22:21,348 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-26 10:22:21,348 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-26 10:22:21,348 - __main__ - INFO - Processing time records for date: 2025-06-26
+2025-06-26 10:22:21,349 - openai_client - INFO - Testing OpenAI connection...
+2025-06-26 10:22:25,425 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-26 10:22:25,425 - notion_client - INFO - Fetching classification options from database schema
+2025-06-26 10:22:26,618 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-26 10:22:26,619 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-26 10:22:26,620 - notion_client - INFO - Fetching time records for date: 2025-06-26
+2025-06-26 10:22:27,663 - notion_client - INFO - Successfully fetched 2 time records
+2025-06-26 10:22:27,664 - __main__ - INFO - Found 2 time records for 2025-06-26
+2025-06-26 10:22:27,664 - __main__ - INFO - Record 14a0649b-85f4-4938-84d9-7d0a68eb97a1 already classified as: 通勤
+2025-06-26 10:22:27,665 - __main__ - INFO - Record c4a87bbc-30fa-48fd-98c4-c29bdd875e2f already classified as: 社交/家庭
+2025-06-26 10:22:27,665 - __main__ - INFO - Classification complete: 0 records classified
+2025-06-26 10:22:27,665 - __main__ - INFO - Classification completed successfully
+2025-06-26 13:04:50,513 - notion_client - INFO - Notion client initialized
+2025-06-26 13:04:50,514 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-26 13:04:50,514 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-26 13:04:50,515 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-26 13:04:50,515 - __main__ - INFO - Processing time records for date: 2025-06-26
+2025-06-26 13:04:50,515 - openai_client - INFO - Testing OpenAI connection...
+2025-06-26 13:04:54,712 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-26 13:04:54,713 - notion_client - INFO - Fetching classification options from database schema
+2025-06-26 13:04:55,573 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-26 13:04:55,575 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-26 13:04:55,576 - notion_client - INFO - Fetching time records for date: 2025-06-26
+2025-06-26 13:05:03,205 - notion_client - INFO - Successfully fetched 6 time records
+2025-06-26 13:05:03,206 - __main__ - INFO - Found 6 time records for 2025-06-26
+2025-06-26 13:05:03,207 - __main__ - INFO - Processing record 5e2ff653-6b29-4366-aaa7-b471870d3863: 看手机...
+2025-06-26 13:05:03,207 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-26 13:05:06,444 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-06-26 13:05:06,445 - __main__ - INFO - Exact match found: 休息/放松
+2025-06-26 13:05:06,446 - notion_client - INFO - Updating record 5e2ff653-6b29-4366-aaa7-b471870d3863 with classification: 休息/放松
+2025-06-26 13:05:09,216 - notion_client - INFO - Successfully updated record 5e2ff653-6b29-4366-aaa7-b471870d3863
+2025-06-26 13:05:09,217 - __main__ - INFO - Successfully classified record 5e2ff653-6b29-4366-aaa7-b471870d3863 as: 休息/放松
+2025-06-26 13:05:09,218 - __main__ - INFO - Processing record c11730f3-c383-40e1-a8df-246826a056e8: 午饭...
+2025-06-26 13:05:09,219 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-26 13:05:12,826 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-06-26 13:05:12,827 - __main__ - INFO - Exact match found: 休息/放松
+2025-06-26 13:05:12,827 - notion_client - INFO - Updating record c11730f3-c383-40e1-a8df-246826a056e8 with classification: 休息/放松
+2025-06-26 13:05:14,003 - notion_client - INFO - Successfully updated record c11730f3-c383-40e1-a8df-246826a056e8
+2025-06-26 13:05:14,004 - __main__ - INFO - Successfully classified record c11730f3-c383-40e1-a8df-246826a056e8 as: 休息/放松
+2025-06-26 13:05:14,005 - __main__ - INFO - Processing record 3311d2d5-c5ec-4423-9ac3-22811229b568: 画多机状态图...
+2025-06-26 13:05:14,006 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-26 13:05:17,376 - openai_client - INFO - OpenAI classification result: 工作
+2025-06-26 13:05:17,377 - __main__ - INFO - Exact match found: 工作
+2025-06-26 13:05:17,377 - notion_client - INFO - Updating record 3311d2d5-c5ec-4423-9ac3-22811229b568 with classification: 工作
+2025-06-26 13:05:19,559 - notion_client - INFO - Successfully updated record 3311d2d5-c5ec-4423-9ac3-22811229b568
+2025-06-26 13:05:19,560 - __main__ - INFO - Successfully classified record 3311d2d5-c5ec-4423-9ac3-22811229b568 as: 工作
+2025-06-26 13:05:19,560 - __main__ - INFO - Processing record d91932b9-8768-4fc1-9f44-3f0c04df6d1a: 弄时间记录...
+2025-06-26 13:05:19,561 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-26 13:05:22,828 - openai_client - INFO - OpenAI classification result: 生活事务
+2025-06-26 13:05:22,829 - __main__ - INFO - Exact match found: 生活事务
+2025-06-26 13:05:22,829 - notion_client - INFO - Updating record d91932b9-8768-4fc1-9f44-3f0c04df6d1a with classification: 生活事务
+2025-06-26 13:05:24,163 - notion_client - INFO - Successfully updated record d91932b9-8768-4fc1-9f44-3f0c04df6d1a
+2025-06-26 13:05:24,165 - __main__ - INFO - Successfully classified record d91932b9-8768-4fc1-9f44-3f0c04df6d1a as: 生活事务
+2025-06-26 13:05:24,166 - __main__ - INFO - Record 14a0649b-85f4-4938-84d9-7d0a68eb97a1 already classified as: 通勤
+2025-06-26 13:05:24,167 - __main__ - INFO - Record c4a87bbc-30fa-48fd-98c4-c29bdd875e2f already classified as: 工作
+2025-06-26 13:05:24,167 - __main__ - INFO - Classification complete: 4 records classified
+2025-06-26 13:05:24,168 - __main__ - INFO - Classification completed successfully
+2025-06-26 19:52:53,205 - notion_client - INFO - Notion client initialized
+2025-06-26 19:52:53,206 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-26 19:52:53,206 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-26 19:52:53,206 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-26 19:52:53,207 - __main__ - INFO - Processing time records for date: 2025-06-26
+2025-06-26 19:52:53,207 - openai_client - INFO - Testing OpenAI connection...
+2025-06-26 19:52:57,083 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-26 19:52:57,086 - notion_client - INFO - Fetching classification options from database schema
+2025-06-26 19:52:57,961 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-26 19:52:57,962 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-26 19:52:57,964 - notion_client - INFO - Fetching time records for date: 2025-06-26
+2025-06-26 19:52:59,235 - notion_client - INFO - Successfully fetched 9 time records
+2025-06-26 19:52:59,237 - __main__ - INFO - Found 9 time records for 2025-06-26
+2025-06-26 19:52:59,237 - __main__ - INFO - Processing record 7a379d82-78ba-4d8b-a27d-dafa942c72e4: 帮助赖世杰看问题...
+2025-06-26 19:52:59,238 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-26 19:53:02,506 - openai_client - INFO - OpenAI classification result: 社交/家庭
+2025-06-26 19:53:02,507 - __main__ - INFO - Exact match found: 社交/家庭
+2025-06-26 19:53:02,507 - notion_client - INFO - Updating record 7a379d82-78ba-4d8b-a27d-dafa942c72e4 with classification: 社交/家庭
+2025-06-26 19:53:03,923 - notion_client - INFO - Successfully updated record 7a379d82-78ba-4d8b-a27d-dafa942c72e4
+2025-06-26 19:53:03,924 - __main__ - INFO - Successfully classified record 7a379d82-78ba-4d8b-a27d-dafa942c72e4 as: 社交/家庭
+2025-06-26 19:53:03,924 - __main__ - INFO - Processing record c9c2bc18-22f1-449e-86c9-2de5f79947f2: 看多机mdp改为新接口问题...
+2025-06-26 19:53:03,925 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-26 19:53:07,219 - openai_client - INFO - OpenAI classification result: 工作
+2025-06-26 19:53:07,220 - __main__ - INFO - Exact match found: 工作
+2025-06-26 19:53:07,220 - notion_client - INFO - Updating record c9c2bc18-22f1-449e-86c9-2de5f79947f2 with classification: 工作
+2025-06-26 19:53:09,258 - notion_client - INFO - Successfully updated record c9c2bc18-22f1-449e-86c9-2de5f79947f2
+2025-06-26 19:53:09,259 - __main__ - INFO - Successfully classified record c9c2bc18-22f1-449e-86c9-2de5f79947f2 as: 工作
+2025-06-26 19:53:09,260 - __main__ - INFO - Processing record c490be9f-aac7-4a1b-bd0f-597dd09186a0: 晚饭...
+2025-06-26 19:53:09,260 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-26 19:53:12,076 - openai_client - INFO - OpenAI classification result: 生活事务
+2025-06-26 19:53:12,077 - __main__ - INFO - Exact match found: 生活事务
+2025-06-26 19:53:12,077 - notion_client - INFO - Updating record c490be9f-aac7-4a1b-bd0f-597dd09186a0 with classification: 生活事务
+2025-06-26 19:53:13,270 - notion_client - INFO - Successfully updated record c490be9f-aac7-4a1b-bd0f-597dd09186a0
+2025-06-26 19:53:13,271 - __main__ - INFO - Successfully classified record c490be9f-aac7-4a1b-bd0f-597dd09186a0 as: 生活事务
+2025-06-26 19:53:13,271 - __main__ - INFO - Record 5e2ff653-6b29-4366-aaa7-b471870d3863 already classified as: 休息/放松
+2025-06-26 19:53:13,271 - __main__ - INFO - Record c11730f3-c383-40e1-a8df-246826a056e8 already classified as: 休息/放松
+2025-06-26 19:53:13,272 - __main__ - INFO - Record 3311d2d5-c5ec-4423-9ac3-22811229b568 already classified as: 工作
+2025-06-26 19:53:13,272 - __main__ - INFO - Record d91932b9-8768-4fc1-9f44-3f0c04df6d1a already classified as: 生活事务
+2025-06-26 19:53:13,273 - __main__ - INFO - Record 14a0649b-85f4-4938-84d9-7d0a68eb97a1 already classified as: 通勤
+2025-06-26 19:53:13,273 - __main__ - INFO - Record c4a87bbc-30fa-48fd-98c4-c29bdd875e2f already classified as: 工作
+2025-06-26 19:53:13,273 - __main__ - INFO - Classification complete: 3 records classified
+2025-06-26 19:53:13,273 - __main__ - INFO - Classification completed successfully
+2025-06-26 20:39:37,139 - notion_client - INFO - Notion client initialized
+2025-06-26 20:39:37,140 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-06-26 20:39:37,140 - __main__ - INFO - TimeRecordClassifier initialized
+2025-06-26 20:39:37,140 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-06-26 20:39:37,140 - __main__ - INFO - Processing time records for date: 2025-06-26
+2025-06-26 20:39:37,140 - openai_client - INFO - Testing OpenAI connection...
+2025-06-26 20:39:40,446 - openai_client - INFO - OpenAI connection test successful: OK
+2025-06-26 20:39:40,447 - notion_client - INFO - Fetching classification options from database schema
+2025-06-26 20:39:41,043 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-26 20:39:41,044 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-06-26 20:39:41,045 - notion_client - INFO - Fetching time records for date: 2025-06-26
+2025-06-26 20:39:42,287 - notion_client - INFO - Successfully fetched 10 time records
+2025-06-26 20:39:42,287 - __main__ - INFO - Found 10 time records for 2025-06-26
+2025-06-26 20:39:42,287 - __main__ - INFO - Processing record 95779f19-5757-4dec-a9d6-8a7627bf22c1: 帮助杜林看gmapps编译问题...
+2025-06-26 20:39:42,288 - openai_client - INFO - Sending classification request to OpenAI
+2025-06-26 20:39:45,926 - openai_client - INFO - OpenAI classification result: 工作
+2025-06-26 20:39:45,928 - __main__ - INFO - Exact match found: 工作
+2025-06-26 20:39:45,929 - notion_client - INFO - Updating record 95779f19-5757-4dec-a9d6-8a7627bf22c1 with classification: 工作
+2025-06-26 20:39:47,693 - notion_client - INFO - Successfully updated record 95779f19-5757-4dec-a9d6-8a7627bf22c1
+2025-06-26 20:39:47,696 - __main__ - INFO - Successfully classified record 95779f19-5757-4dec-a9d6-8a7627bf22c1 as: 工作
+2025-06-26 20:39:47,698 - __main__ - INFO - Record 7a379d82-78ba-4d8b-a27d-dafa942c72e4 already classified as: 工作
+2025-06-26 20:39:47,699 - __main__ - INFO - Record c9c2bc18-22f1-449e-86c9-2de5f79947f2 already classified as: 工作
+2025-06-26 20:39:47,700 - __main__ - INFO - Record c490be9f-aac7-4a1b-bd0f-597dd09186a0 already classified as: 生活事务
+2025-06-26 20:39:47,701 - __main__ - INFO - Record 5e2ff653-6b29-4366-aaa7-b471870d3863 already classified as: 休息/放松
+2025-06-26 20:39:47,702 - __main__ - INFO - Record c11730f3-c383-40e1-a8df-246826a056e8 already classified as: 休息/放松
+2025-06-26 20:39:47,703 - __main__ - INFO - Record 3311d2d5-c5ec-4423-9ac3-22811229b568 already classified as: 工作
+2025-06-26 20:39:47,705 - __main__ - INFO - Record d91932b9-8768-4fc1-9f44-3f0c04df6d1a already classified as: 生活事务
+2025-06-26 20:39:47,706 - __main__ - INFO - Record 14a0649b-85f4-4938-84d9-7d0a68eb97a1 already classified as: 通勤
+2025-06-26 20:39:47,707 - __main__ - INFO - Record c4a87bbc-30fa-48fd-98c4-c29bdd875e2f already classified as: 工作
+2025-06-26 20:39:47,708 - __main__ - INFO - Classification complete: 1 records classified
+2025-06-26 20:39:47,709 - __main__ - INFO - Classification completed successfully
+2025-07-02 21:11:52,766 - notion_client - INFO - Notion client initialized
+2025-07-02 21:11:52,766 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-07-02 21:11:52,766 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-02 21:11:52,766 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-02 21:11:52,766 - __main__ - INFO - Processing time records for date: 2025-07-02
+2025-07-02 21:11:52,766 - openai_client - INFO - Testing OpenAI connection...
+2025-07-02 21:16:53,234 - openai_client - ERROR - OpenAI connection test failed: 
+2025-07-02 21:16:53,234 - __main__ - ERROR - OpenAI connection test failed
+2025-07-02 21:16:53,234 - __main__ - ERROR - Classification failed
+2025-07-02 21:17:38,691 - notion_client - INFO - Notion client initialized
+2025-07-02 21:17:38,691 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-07-02 21:17:38,691 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-02 21:17:38,691 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-02 21:17:38,691 - __main__ - INFO - Processing time records for date: 2025-07-02
+2025-07-02 21:17:38,691 - openai_client - INFO - Testing OpenAI connection...
+2025-07-02 21:17:54,599 - openai_client - ERROR - OpenAI connection test failed: Connection timeout
+2025-07-02 21:17:54,600 - __main__ - ERROR - OpenAI connection test failed
+2025-07-02 21:17:54,600 - __main__ - ERROR - Classification failed
+2025-07-02 21:19:55,628 - notion_client - INFO - Notion client initialized
+2025-07-02 21:19:55,628 - openai_client - INFO - OpenAI client initialized - model: deepseek-chat
+2025-07-02 21:19:55,628 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-02 21:19:55,628 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-02 21:19:55,628 - __main__ - INFO - Processing time records for date: 2025-07-02
+2025-07-02 21:19:55,628 - openai_client - INFO - Testing OpenAI connection...
+2025-07-02 21:20:11,539 - openai_client - ERROR - OpenAI connection test failed: Connection timeout
+2025-07-02 21:20:11,540 - __main__ - ERROR - OpenAI connection test failed
+2025-07-02 21:20:11,540 - __main__ - ERROR - Classification failed
+2025-07-02 21:23:46,299 - notion_client - INFO - Notion client initialized
+2025-07-02 21:23:46,299 - openai_client - INFO - OpenAI client initialized - model: deepseek-r1:1.5b
+2025-07-02 21:23:46,299 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-02 21:23:46,299 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-02 21:23:46,299 - __main__ - INFO - Processing time records for date: 2025-07-02
+2025-07-02 21:23:46,299 - openai_client - INFO - Testing OpenAI connection...
+2025-07-02 21:23:46,496 - openai_client - INFO - OpenAI connection test successful: Okay, so I just received a message
+2025-07-02 21:23:46,496 - notion_client - INFO - Fetching classification options from database schema
+2025-07-02 21:23:48,360 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:23:48,360 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:23:48,361 - notion_client - INFO - Fetching time records for date: 2025-07-02
+2025-07-02 21:23:49,901 - notion_client - INFO - Successfully fetched 13 time records
+2025-07-02 21:23:49,901 - __main__ - INFO - Found 13 time records for 2025-07-02
+2025-07-02 21:23:49,901 - __main__ - INFO - Record 11b9ee5e-bfde-4185-baf3-5d0254f3ff5b already classified as: 工作
+2025-07-02 21:23:49,901 - __main__ - INFO - Processing record 8219ba81-e453-4efb-b90e-197d52a3f9aa: 看时间记录如何使用什么的...
+2025-07-02 21:23:49,902 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:23:50,643 - openai_client - INFO - OpenAI raw response: <think>
+Okay, so I need to classify this time tracking record into one of the given categories. The user provided a specific instruction and some categories to choose from. Let me try to break it down step by step.
+
+First, looking at the content
+2025-07-02 21:23:50,643 - openai_client - INFO - OpenAI classification result: Okay, so I need to classify this time tracking record into one of the given categories. The user provided a specific instruction and some categories to choose from. Let me try to break it down step by step.
+
+First, looking at the content
+2025-07-02 21:23:50,643 - __main__ - WARNING - No matching classification found for 'Okay, so I need to classify this time tracking record into one of the given categories. The user provided a specific instruction and some categories to choose from. Let me try to break it down step by step.
+
+First, looking at the content' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:23:50,643 - __main__ - WARNING - Failed to classify record 8219ba81-e453-4efb-b90e-197d52a3f9aa: 看时间记录如何使用什么的...
+2025-07-02 21:23:50,643 - __main__ - INFO - Processing record e8d230ac-34f9-4600-a3d3-e61899ac5a95: 不知道在干嘛...
+2025-07-02 21:23:50,643 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:23:51,289 - openai_client - INFO - OpenAI raw response: <think>
+Alright, let's tackle this time tracking record. The user provided a time record titled "不知道在干嘛" which translates to "I don't know what I'm doing." My task is to classify this into one of the given categories
+2025-07-02 21:23:51,289 - openai_client - INFO - OpenAI classification result: Alright, let's tackle this time tracking record. The user provided a time record titled "不知道在干嘛" which translates to "I don't know what I'm doing." My task is to classify this into one of the given categories
+2025-07-02 21:23:51,289 - __main__ - WARNING - No matching classification found for 'Alright, let's tackle this time tracking record. The user provided a time record titled "不知道在干嘛" which translates to "I don't know what I'm doing." My task is to classify this into one of the given categories' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:23:51,289 - __main__ - WARNING - Failed to classify record e8d230ac-34f9-4600-a3d3-e61899ac5a95: 不知道在干嘛...
+2025-07-02 21:23:51,289 - __main__ - INFO - Processing record 8df3739d-115a-46bd-9362-41ef41adff42: 晚饭...
+2025-07-02 21:23:51,289 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:23:51,933 - openai_client - INFO - OpenAI raw response: <think>
+Okay, so I need to classify this time tracking record called "晚饭" into one of the given categories. Let me break it down step by step.
+
+First, the word "晚饭" translates to "late dinner." That sounds
+2025-07-02 21:23:51,933 - openai_client - INFO - OpenAI classification result: Okay, so I need to classify this time tracking record called "晚饭" into one of the given categories. Let me break it down step by step.
+
+First, the word "晚饭" translates to "late dinner." That sounds
+2025-07-02 21:23:51,933 - __main__ - WARNING - No matching classification found for 'Okay, so I need to classify this time tracking record called "晚饭" into one of the given categories. Let me break it down step by step.
+
+First, the word "晚饭" translates to "late dinner." That sounds' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:23:51,933 - __main__ - WARNING - Failed to classify record 8df3739d-115a-46bd-9362-41ef41adff42: 晚饭...
+2025-07-02 21:23:51,934 - __main__ - INFO - Processing record f7e4d6be-21eb-417b-bbd5-cf27617b7c5b: 看手机...
+2025-07-02 21:23:51,934 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:23:52,578 - openai_client - INFO - OpenAI raw response: <think>
+Okay, so I have this time tracking record that says "看手机". That translates to "watching a phone" or something like that. Hmm, let me think about how to classify this into one of the provided categories.
+
+First,
+2025-07-02 21:23:52,578 - openai_client - INFO - OpenAI classification result: Okay, so I have this time tracking record that says "看手机". That translates to "watching a phone" or something like that. Hmm, let me think about how to classify this into one of the provided categories.
+
+First,
+2025-07-02 21:23:52,578 - __main__ - WARNING - No matching classification found for 'Okay, so I have this time tracking record that says "看手机". That translates to "watching a phone" or something like that. Hmm, let me think about how to classify this into one of the provided categories.
+
+First,' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:23:52,579 - __main__ - WARNING - Failed to classify record f7e4d6be-21eb-417b-bbd5-cf27617b7c5b: 看手机...
+2025-07-02 21:23:52,579 - __main__ - INFO - Processing record 74c720e2-d9ca-46be-a892-55571858888d: 看viewer的cellTree不显示问题，已经解决了，实际上是一个地方的代码注释了！浪费了几天时间看这个。。。...
+2025-07-02 21:23:52,579 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:23:53,228 - openai_client - INFO - OpenAI raw response: <think>
+Alright, let's break this down step by step. The user provided a time tracking record about a viewer's cellTree not showing issues and being resolved. They mentioned that it actually was a code comment in a place they were working on,
+2025-07-02 21:23:53,228 - openai_client - INFO - OpenAI classification result: Alright, let's break this down step by step. The user provided a time tracking record about a viewer's cellTree not showing issues and being resolved. They mentioned that it actually was a code comment in a place they were working on,
+2025-07-02 21:23:53,228 - __main__ - WARNING - No matching classification found for 'Alright, let's break this down step by step. The user provided a time tracking record about a viewer's cellTree not showing issues and being resolved. They mentioned that it actually was a code comment in a place they were working on,' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:23:53,228 - __main__ - WARNING - Failed to classify record 74c720e2-d9ca-46be-a892-55571858888d: 看viewer的cellTree不显示问题，已经解决了，实际上是一个地方的代码注释了！浪费了几天时间看这个。。。...
+2025-07-02 21:23:53,228 - __main__ - INFO - Processing record 7822996c-efe2-469d-8189-a73570d5ea31: 午休...
+2025-07-02 21:23:53,228 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:23:53,873 - openai_client - INFO - OpenAI raw response: <think>
+Alright, let's see what I need to do here. The user has given me a time tracking record and wants it classified into one of several categories. They provided an example response which was "休息/放松," so that gives me a
+2025-07-02 21:23:53,873 - openai_client - INFO - OpenAI classification result: Alright, let's see what I need to do here. The user has given me a time tracking record and wants it classified into one of several categories. They provided an example response which was "休息/放松," so that gives me a
+2025-07-02 21:23:53,873 - __main__ - INFO - Partial match found: 休息/放松
+2025-07-02 21:23:53,873 - notion_client - INFO - Updating record 7822996c-efe2-469d-8189-a73570d5ea31 with classification: 休息/放松
+2025-07-02 21:23:55,792 - notion_client - INFO - Successfully updated record 7822996c-efe2-469d-8189-a73570d5ea31
+2025-07-02 21:23:55,792 - __main__ - INFO - Successfully classified record 7822996c-efe2-469d-8189-a73570d5ea31 as: 休息/放松
+2025-07-02 21:23:55,793 - __main__ - INFO - Processing record 39a995dd-669f-488a-9f30-456ccc9547f3: 看了一会viewer的cell tree问题...
+2025-07-02 21:23:55,793 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:23:56,506 - openai_client - INFO - OpenAI raw response: <think>
+Alright, let's see what I've got here. The user provided a time tracking record titled "看了一会viewer的cell tree问题" and asked me to classify it into one of several categories. Hmm, okay, first thing I need
+2025-07-02 21:23:56,506 - openai_client - INFO - OpenAI classification result: Alright, let's see what I've got here. The user provided a time tracking record titled "看了一会viewer的cell tree问题" and asked me to classify it into one of several categories. Hmm, okay, first thing I need
+2025-07-02 21:23:56,506 - __main__ - WARNING - No matching classification found for 'Alright, let's see what I've got here. The user provided a time tracking record titled "看了一会viewer的cell tree问题" and asked me to classify it into one of several categories. Hmm, okay, first thing I need' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:23:56,506 - __main__ - WARNING - Failed to classify record 39a995dd-669f-488a-9f30-456ccc9547f3: 看了一会viewer的cell tree问题...
+2025-07-02 21:23:56,506 - __main__ - INFO - Processing record 33826446-8087-4142-970b-04159ce77c5a: 处理微信读书活动和删除工作软件...
+2025-07-02 21:23:56,506 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:23:57,153 - openai_client - INFO - OpenAI raw response: <think>
+Okay, so I need to classify this time tracking record called "处理微信读书活动和删除工作软件" into one of the provided categories. Let me break it down step by step.
+
+First, looking at the content: it says "
+2025-07-02 21:23:57,153 - openai_client - INFO - OpenAI classification result: Okay, so I need to classify this time tracking record called "处理微信读书活动和删除工作软件" into one of the provided categories. Let me break it down step by step.
+
+First, looking at the content: it says "
+2025-07-02 21:23:57,154 - __main__ - INFO - Partial match found: 工作
+2025-07-02 21:23:57,154 - notion_client - INFO - Updating record 33826446-8087-4142-970b-04159ce77c5a with classification: 工作
+2025-07-02 21:23:58,967 - notion_client - INFO - Successfully updated record 33826446-8087-4142-970b-04159ce77c5a
+2025-07-02 21:23:58,968 - __main__ - INFO - Successfully classified record 33826446-8087-4142-970b-04159ce77c5a as: 工作
+2025-07-02 21:23:58,969 - __main__ - INFO - Processing record 8995e048-6778-4b2c-95ce-b32d7c127cab: 看mdp转档regression crash问题...
+2025-07-02 21:23:58,969 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:23:59,681 - openai_client - INFO - OpenAI raw response: <think>
+Alright, let's break this down step by step. The user provided a time tracking record titled "看mdp转档regression crash问题" which translates to "Looking at the transition from master's degree to a research diploma and encountering a
+2025-07-02 21:23:59,681 - openai_client - INFO - OpenAI classification result: Alright, let's break this down step by step. The user provided a time tracking record titled "看mdp转档regression crash问题" which translates to "Looking at the transition from master's degree to a research diploma and encountering a
+2025-07-02 21:23:59,681 - __main__ - WARNING - No matching classification found for 'Alright, let's break this down step by step. The user provided a time tracking record titled "看mdp转档regression crash问题" which translates to "Looking at the transition from master's degree to a research diploma and encountering a' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:23:59,681 - __main__ - WARNING - Failed to classify record 8995e048-6778-4b2c-95ce-b32d7c127cab: 看mdp转档regression crash问题...
+2025-07-02 21:23:59,682 - __main__ - INFO - Processing record 98b40702-5af6-4945-a0af-128eae28ee3e: 写工作空间封装文档...
+2025-07-02 21:23:59,682 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:24:00,326 - openai_client - INFO - OpenAI raw response: <think>
+Okay, so I have this time tracking record that says "写工作空间封装文档". Hmm, let me try to figure out what that means. The word "封装" translates to "pack" or maybe "cover", but in context
+2025-07-02 21:24:00,326 - openai_client - INFO - OpenAI classification result: Okay, so I have this time tracking record that says "写工作空间封装文档". Hmm, let me try to figure out what that means. The word "封装" translates to "pack" or maybe "cover", but in context
+2025-07-02 21:24:00,327 - __main__ - INFO - Partial match found: 工作
+2025-07-02 21:24:00,327 - notion_client - INFO - Updating record 98b40702-5af6-4945-a0af-128eae28ee3e with classification: 工作
+2025-07-02 21:24:02,186 - notion_client - INFO - Successfully updated record 98b40702-5af6-4945-a0af-128eae28ee3e
+2025-07-02 21:24:02,187 - __main__ - INFO - Successfully classified record 98b40702-5af6-4945-a0af-128eae28ee3e as: 工作
+2025-07-02 21:24:02,187 - __main__ - INFO - Processing record dcbf2b2b-ba87-4a5e-ad99-864eac0cfb70: 跟杜林看一下skipper怎么用...
+2025-07-02 21:24:02,187 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:24:02,930 - openai_client - INFO - OpenAI raw response: <think>
+Alright, let's break this down step by step. The user provided a time tracking record: "跟杜林看一下skipper怎么用." I need to classify this into one of the given categories.
+
+First, I'll analyze the content
+2025-07-02 21:24:02,930 - openai_client - INFO - OpenAI classification result: Alright, let's break this down step by step. The user provided a time tracking record: "跟杜林看一下skipper怎么用." I need to classify this into one of the given categories.
+
+First, I'll analyze the content
+2025-07-02 21:24:02,931 - __main__ - WARNING - No matching classification found for 'Alright, let's break this down step by step. The user provided a time tracking record: "跟杜林看一下skipper怎么用." I need to classify this into one of the given categories.
+
+First, I'll analyze the content' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:24:02,931 - __main__ - WARNING - Failed to classify record dcbf2b2b-ba87-4a5e-ad99-864eac0cfb70: 跟杜林看一下skipper怎么用...
+2025-07-02 21:24:02,931 - __main__ - INFO - Processing record f14cc6da-b8ed-41a9-98c3-227ff601af24: 开车去公司...
+2025-07-02 21:24:02,931 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:24:03,578 - openai_client - INFO - OpenAI raw response: <think>
+Alright, let's break this down step by step. The user provided a time tracking record labeled as "开车去公司" which translates to "Drive to work." My task is to classify this into one of the given categories.
+
+First,
+2025-07-02 21:24:03,578 - openai_client - INFO - OpenAI classification result: Alright, let's break this down step by step. The user provided a time tracking record labeled as "开车去公司" which translates to "Drive to work." My task is to classify this into one of the given categories.
+
+First,
+2025-07-02 21:24:03,578 - __main__ - WARNING - No matching classification found for 'Alright, let's break this down step by step. The user provided a time tracking record labeled as "开车去公司" which translates to "Drive to work." My task is to classify this into one of the given categories.
+
+First,' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:24:03,578 - __main__ - WARNING - Failed to classify record f14cc6da-b8ed-41a9-98c3-227ff601af24: 开车去公司...
+2025-07-02 21:24:03,578 - __main__ - INFO - Classification complete: 3 records classified
+2025-07-02 21:24:03,578 - __main__ - INFO - Classification completed successfully
+2025-07-02 21:24:43,044 - notion_client - INFO - Notion client initialized
+2025-07-02 21:24:43,044 - openai_client - INFO - OpenAI client initialized - model: deepseek-r1:1.5b
+2025-07-02 21:24:43,044 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-02 21:24:43,044 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-02 21:24:43,044 - __main__ - INFO - Processing time records for date: 2025-07-02
+2025-07-02 21:24:43,044 - openai_client - INFO - Testing OpenAI connection...
+2025-07-02 21:24:43,240 - openai_client - INFO - OpenAI connection test successful: Okay, so I just received a message
+2025-07-02 21:24:43,240 - notion_client - INFO - Fetching classification options from database schema
+2025-07-02 21:24:45,766 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:24:45,766 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:24:45,767 - notion_client - INFO - Fetching time records for date: 2025-07-02
+2025-07-02 21:24:47,608 - notion_client - INFO - Successfully fetched 13 time records
+2025-07-02 21:24:47,608 - __main__ - INFO - Found 13 time records for 2025-07-02
+2025-07-02 21:24:47,608 - __main__ - INFO - Record 11b9ee5e-bfde-4185-baf3-5d0254f3ff5b already classified as: 工作
+2025-07-02 21:24:47,609 - __main__ - INFO - Processing record 8219ba81-e453-4efb-b90e-197d52a3f9aa: 看时间记录如何使用什么的...
+2025-07-02 21:24:47,609 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:24:48,349 - openai_client - INFO - OpenAI raw response: <think>
+Okay, so I need to classify this time tracking record into one of the given categories. The user provided a specific instruction and some examples, but in this case, it seems like they just want me to pick the right category from the list
+2025-07-02 21:24:48,349 - openai_client - INFO - OpenAI classification result: Okay, so I need to classify this time tracking record into one of the given categories. The user provided a specific instruction and some examples, but in this case, it seems like they just want me to pick the right category from the list
+2025-07-02 21:24:48,349 - __main__ - WARNING - No matching classification found for 'Okay, so I need to classify this time tracking record into one of the given categories. The user provided a specific instruction and some examples, but in this case, it seems like they just want me to pick the right category from the list' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:24:48,349 - __main__ - WARNING - Failed to classify record 8219ba81-e453-4efb-b90e-197d52a3f9aa: 看时间记录如何使用什么的...
+2025-07-02 21:24:48,349 - __main__ - INFO - Processing record e8d230ac-34f9-4600-a3d3-e61899ac5a95: 不知道在干嘛...
+2025-07-02 21:24:48,349 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:24:48,998 - openai_client - INFO - OpenAI raw response: <think>
+Alright, let's tackle this time tracking record. The user provided a Time Record titled "不知道在干嘛" which translates to "I don't know what I'm doing." My task is to classify this into one of the given categories.
+2025-07-02 21:24:48,998 - openai_client - INFO - OpenAI classification result: Alright, let's tackle this time tracking record. The user provided a Time Record titled "不知道在干嘛" which translates to "I don't know what I'm doing." My task is to classify this into one of the given categories.
+2025-07-02 21:24:48,999 - __main__ - WARNING - No matching classification found for 'Alright, let's tackle this time tracking record. The user provided a Time Record titled "不知道在干嘛" which translates to "I don't know what I'm doing." My task is to classify this into one of the given categories.' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:24:48,999 - __main__ - WARNING - Failed to classify record e8d230ac-34f9-4600-a3d3-e61899ac5a95: 不知道在干嘛...
+2025-07-02 21:24:48,999 - __main__ - INFO - Processing record 8df3739d-115a-46bd-9362-41ef41adff42: 晚饭...
+2025-07-02 21:24:48,999 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:24:49,657 - openai_client - INFO - OpenAI raw response: <think>
+Alright, let's break this down step by step. The user provided a time tracking record labeled "晚饭" which translates to "late dinner." My task is to classify this into one of the given categories.
+
+First, I need to
+2025-07-02 21:24:49,658 - openai_client - INFO - OpenAI classification result: First, I need to
+2025-07-02 21:24:49,658 - __main__ - WARNING - No matching classification found for 'First, I need to' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:24:49,658 - __main__ - WARNING - Failed to classify record 8df3739d-115a-46bd-9362-41ef41adff42: 晚饭...
+2025-07-02 21:24:49,658 - __main__ - INFO - Processing record f7e4d6be-21eb-417b-bbd5-cf27617b7c5b: 看手机...
+2025-07-02 21:24:49,658 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:24:50,306 - openai_client - INFO - OpenAI raw response: <think>
+Alright, let's tackle this time tracking record. The title is "看手机," which translates to "watching a phone." Hmm, that seems like it's about using a smartphone or an electronic device. 
+
+First, I need to
+2025-07-02 21:24:50,306 - openai_client - INFO - OpenAI classification result: First, I need to
+2025-07-02 21:24:50,306 - __main__ - WARNING - No matching classification found for 'First, I need to' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:24:50,306 - __main__ - WARNING - Failed to classify record f7e4d6be-21eb-417b-bbd5-cf27617b7c5b: 看手机...
+2025-07-02 21:24:50,306 - __main__ - INFO - Processing record 74c720e2-d9ca-46be-a892-55571858888d: 看viewer的cellTree不显示问题，已经解决了，实际上是一个地方的代码注释了！浪费了几天时间看这个。。。...
+2025-07-02 21:24:50,306 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:24:50,957 - openai_client - INFO - OpenAI raw response: <think>
+Okay, so I need to classify this time tracking record into one of the given categories. Let me read it again carefully.
+
+The time record says: "viewer的cellTree不显示问题，已经解决了，实际上是一个地方的代码注
+2025-07-02 21:24:50,957 - openai_client - INFO - OpenAI classification result: Okay, so I need to classify this time tracking record into one of the given categories. Let me read it again carefully.
+
+The time record says: "viewer的cellTree不显示问题，已经解决了，实际上是一个地方的代码注
+2025-07-02 21:24:50,957 - __main__ - WARNING - No matching classification found for 'Okay, so I need to classify this time tracking record into one of the given categories. Let me read it again carefully.
+
+The time record says: "viewer的cellTree不显示问题，已经解决了，实际上是一个地方的代码注' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:24:50,957 - __main__ - WARNING - Failed to classify record 74c720e2-d9ca-46be-a892-55571858888d: 看viewer的cellTree不显示问题，已经解决了，实际上是一个地方的代码注释了！浪费了几天时间看这个。。。...
+2025-07-02 21:24:50,957 - __main__ - INFO - Record 7822996c-efe2-469d-8189-a73570d5ea31 already classified as: 休息/放松
+2025-07-02 21:24:50,957 - __main__ - INFO - Processing record 39a995dd-669f-488a-9f30-456ccc9547f3: 看了一会viewer的cell tree问题...
+2025-07-02 21:24:50,957 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:24:51,605 - openai_client - INFO - OpenAI raw response: <think>
+Okay, so I have this time tracking record that says "看了一会viewer的cell tree问题." Hmm, let me try to figure out what that means. The word "cell" in Chinese usually refers to a grid or section on a
+2025-07-02 21:24:51,606 - openai_client - INFO - OpenAI classification result: Okay, so I have this time tracking record that says "看了一会viewer的cell tree问题." Hmm, let me try to figure out what that means. The word "cell" in Chinese usually refers to a grid or section on a
+2025-07-02 21:24:51,606 - __main__ - WARNING - No matching classification found for 'Okay, so I have this time tracking record that says "看了一会viewer的cell tree问题." Hmm, let me try to figure out what that means. The word "cell" in Chinese usually refers to a grid or section on a' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:24:51,606 - __main__ - WARNING - Failed to classify record 39a995dd-669f-488a-9f30-456ccc9547f3: 看了一会viewer的cell tree问题...
+2025-07-02 21:24:51,606 - __main__ - INFO - Record 33826446-8087-4142-970b-04159ce77c5a already classified as: 工作
+2025-07-02 21:24:51,606 - __main__ - INFO - Processing record 8995e048-6778-4b2c-95ce-b32d7c127cab: 看mdp转档regression crash问题...
+2025-07-02 21:24:51,606 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:24:52,256 - openai_client - INFO - OpenAI raw response: <think>
+Alright, let's break this down step by step. The user provided a time tracking record titled "看mdp转档regression crash问题" which translates to "Looking at the transition from MDP to regression crash problem." Hmm, that
+2025-07-02 21:24:52,256 - openai_client - INFO - OpenAI classification result: Alright, let's break this down step by step. The user provided a time tracking record titled "看mdp转档regression crash问题" which translates to "Looking at the transition from MDP to regression crash problem." Hmm, that
+2025-07-02 21:24:52,256 - __main__ - WARNING - No matching classification found for 'Alright, let's break this down step by step. The user provided a time tracking record titled "看mdp转档regression crash问题" which translates to "Looking at the transition from MDP to regression crash problem." Hmm, that' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:24:52,256 - __main__ - WARNING - Failed to classify record 8995e048-6778-4b2c-95ce-b32d7c127cab: 看mdp转档regression crash问题...
+2025-07-02 21:24:52,256 - __main__ - INFO - Record 98b40702-5af6-4945-a0af-128eae28ee3e already classified as: 工作
+2025-07-02 21:24:52,256 - __main__ - INFO - Processing record dcbf2b2b-ba87-4a5e-ad99-864eac0cfb70: 跟杜林看一下skipper怎么用...
+2025-07-02 21:24:52,256 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:24:52,905 - openai_client - INFO - OpenAI raw response: <think>
+Alright, let's break this down step by step. The user provided a time tracking record: "跟杜林看一下skipper怎么用." I need to classify this into one of the given categories.
+
+First, I'll analyze the content
+2025-07-02 21:24:52,905 - openai_client - INFO - OpenAI classification result: Alright, let's break this down step by step. The user provided a time tracking record: "跟杜林看一下skipper怎么用." I need to classify this into one of the given categories.
+
+First, I'll analyze the content
+2025-07-02 21:24:52,906 - __main__ - WARNING - No matching classification found for 'Alright, let's break this down step by step. The user provided a time tracking record: "跟杜林看一下skipper怎么用." I need to classify this into one of the given categories.
+
+First, I'll analyze the content' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:24:52,906 - __main__ - WARNING - Failed to classify record dcbf2b2b-ba87-4a5e-ad99-864eac0cfb70: 跟杜林看一下skipper怎么用...
+2025-07-02 21:24:52,906 - __main__ - INFO - Processing record f14cc6da-b8ed-41a9-98c3-227ff601af24: 开车去公司...
+2025-07-02 21:24:52,906 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:24:53,555 - openai_client - INFO - OpenAI raw response: <think>
+Alright, let's see what I've got here. The user provided a time tracking record labeled "开车去公司" which translates to "Go to work." They want me to classify this into one of the given categories.
+
+First, I
+2025-07-02 21:24:53,555 - openai_client - INFO - OpenAI classification result: First, I
+2025-07-02 21:24:53,555 - __main__ - WARNING - No matching classification found for 'First, I' in options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:24:53,555 - __main__ - WARNING - Failed to classify record f14cc6da-b8ed-41a9-98c3-227ff601af24: 开车去公司...
+2025-07-02 21:24:53,555 - __main__ - INFO - Classification complete: 0 records classified
+2025-07-02 21:24:53,555 - __main__ - INFO - Classification completed successfully
+2025-07-02 21:26:01,584 - notion_client - INFO - Notion client initialized
+2025-07-02 21:26:01,584 - openai_client - INFO - OpenAI client initialized - model: llama3.1:latest
+2025-07-02 21:26:01,584 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-02 21:26:01,584 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-02 21:26:01,584 - __main__ - INFO - Processing time records for date: 2025-07-02
+2025-07-02 21:26:01,584 - openai_client - INFO - Testing OpenAI connection...
+2025-07-02 21:26:01,897 - openai_client - INFO - OpenAI connection test successful: OK
+2025-07-02 21:26:01,897 - notion_client - INFO - Fetching classification options from database schema
+2025-07-02 21:26:03,106 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:26:03,107 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-02 21:26:03,107 - notion_client - INFO - Fetching time records for date: 2025-07-02
+2025-07-02 21:26:06,316 - notion_client - INFO - Successfully fetched 13 time records
+2025-07-02 21:26:06,317 - __main__ - INFO - Found 13 time records for 2025-07-02
+2025-07-02 21:26:06,317 - __main__ - INFO - Record 11b9ee5e-bfde-4185-baf3-5d0254f3ff5b already classified as: 工作
+2025-07-02 21:26:06,317 - __main__ - INFO - Processing record 8219ba81-e453-4efb-b90e-197d52a3f9aa: 看时间记录如何使用什么的...
+2025-07-02 21:26:06,318 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:26:07,100 - openai_client - INFO - OpenAI raw response: 学习
+2025-07-02 21:26:07,100 - openai_client - INFO - OpenAI classification result: 学习
+2025-07-02 21:26:07,100 - __main__ - INFO - Exact match found: 学习
+2025-07-02 21:26:07,100 - notion_client - INFO - Updating record 8219ba81-e453-4efb-b90e-197d52a3f9aa with classification: 学习
+2025-07-02 21:26:09,838 - notion_client - INFO - Successfully updated record 8219ba81-e453-4efb-b90e-197d52a3f9aa
+2025-07-02 21:26:09,838 - __main__ - INFO - Successfully classified record 8219ba81-e453-4efb-b90e-197d52a3f9aa as: 学习
+2025-07-02 21:26:09,838 - __main__ - INFO - Processing record e8d230ac-34f9-4600-a3d3-e61899ac5a95: 不知道在干嘛...
+2025-07-02 21:26:09,838 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:26:10,582 - openai_client - INFO - OpenAI raw response: 休息/放松
+2025-07-02 21:26:10,582 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-07-02 21:26:10,582 - __main__ - INFO - Exact match found: 休息/放松
+2025-07-02 21:26:10,582 - notion_client - INFO - Updating record e8d230ac-34f9-4600-a3d3-e61899ac5a95 with classification: 休息/放松
+2025-07-02 21:26:17,917 - notion_client - INFO - Successfully updated record e8d230ac-34f9-4600-a3d3-e61899ac5a95
+2025-07-02 21:26:17,919 - __main__ - INFO - Successfully classified record e8d230ac-34f9-4600-a3d3-e61899ac5a95 as: 休息/放松
+2025-07-02 21:26:17,919 - __main__ - INFO - Processing record 8df3739d-115a-46bd-9362-41ef41adff42: 晚饭...
+2025-07-02 21:26:17,919 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:26:18,590 - openai_client - INFO - OpenAI raw response: 生活事务
+2025-07-02 21:26:18,590 - openai_client - INFO - OpenAI classification result: 生活事务
+2025-07-02 21:26:18,591 - __main__ - INFO - Exact match found: 生活事务
+2025-07-02 21:26:18,591 - notion_client - INFO - Updating record 8df3739d-115a-46bd-9362-41ef41adff42 with classification: 生活事务
+2025-07-02 21:26:21,488 - notion_client - INFO - Successfully updated record 8df3739d-115a-46bd-9362-41ef41adff42
+2025-07-02 21:26:21,489 - __main__ - INFO - Successfully classified record 8df3739d-115a-46bd-9362-41ef41adff42 as: 生活事务
+2025-07-02 21:26:21,489 - __main__ - INFO - Processing record f7e4d6be-21eb-417b-bbd5-cf27617b7c5b: 看手机...
+2025-07-02 21:26:21,490 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:26:22,223 - openai_client - INFO - OpenAI raw response: 休息/放松
+2025-07-02 21:26:22,223 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-07-02 21:26:22,223 - __main__ - INFO - Exact match found: 休息/放松
+2025-07-02 21:26:22,223 - notion_client - INFO - Updating record f7e4d6be-21eb-417b-bbd5-cf27617b7c5b with classification: 休息/放松
+2025-07-02 21:26:24,939 - notion_client - INFO - Successfully updated record f7e4d6be-21eb-417b-bbd5-cf27617b7c5b
+2025-07-02 21:26:24,941 - __main__ - INFO - Successfully classified record f7e4d6be-21eb-417b-bbd5-cf27617b7c5b as: 休息/放松
+2025-07-02 21:26:24,941 - __main__ - INFO - Processing record 74c720e2-d9ca-46be-a892-55571858888d: 看viewer的cellTree不显示问题，已经解决了，实际上是一个地方的代码注释了！浪费了几天时间看这个。。。...
+2025-07-02 21:26:24,941 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:26:25,673 - openai_client - INFO - OpenAI raw response: 学习
+2025-07-02 21:26:25,673 - openai_client - INFO - OpenAI classification result: 学习
+2025-07-02 21:26:25,673 - __main__ - INFO - Exact match found: 学习
+2025-07-02 21:26:25,673 - notion_client - INFO - Updating record 74c720e2-d9ca-46be-a892-55571858888d with classification: 学习
+2025-07-02 21:26:28,628 - notion_client - INFO - Successfully updated record 74c720e2-d9ca-46be-a892-55571858888d
+2025-07-02 21:26:28,629 - __main__ - INFO - Successfully classified record 74c720e2-d9ca-46be-a892-55571858888d as: 学习
+2025-07-02 21:26:28,629 - __main__ - INFO - Record 7822996c-efe2-469d-8189-a73570d5ea31 already classified as: 休息/放松
+2025-07-02 21:26:28,629 - __main__ - INFO - Processing record 39a995dd-669f-488a-9f30-456ccc9547f3: 看了一会viewer的cell tree问题...
+2025-07-02 21:26:28,629 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:26:29,287 - openai_client - INFO - OpenAI raw response: 学习
+2025-07-02 21:26:29,287 - openai_client - INFO - OpenAI classification result: 学习
+2025-07-02 21:26:29,287 - __main__ - INFO - Exact match found: 学习
+2025-07-02 21:26:29,287 - notion_client - INFO - Updating record 39a995dd-669f-488a-9f30-456ccc9547f3 with classification: 学习
+2025-07-02 21:26:32,452 - notion_client - INFO - Successfully updated record 39a995dd-669f-488a-9f30-456ccc9547f3
+2025-07-02 21:26:32,453 - __main__ - INFO - Successfully classified record 39a995dd-669f-488a-9f30-456ccc9547f3 as: 学习
+2025-07-02 21:26:32,454 - __main__ - INFO - Record 33826446-8087-4142-970b-04159ce77c5a already classified as: 工作
+2025-07-02 21:26:32,454 - __main__ - INFO - Processing record 8995e048-6778-4b2c-95ce-b32d7c127cab: 看mdp转档regression crash问题...
+2025-07-02 21:26:32,454 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:26:33,056 - openai_client - INFO - OpenAI raw response: 工作
+2025-07-02 21:26:33,056 - openai_client - INFO - OpenAI classification result: 工作
+2025-07-02 21:26:33,056 - __main__ - INFO - Exact match found: 工作
+2025-07-02 21:26:33,056 - notion_client - INFO - Updating record 8995e048-6778-4b2c-95ce-b32d7c127cab with classification: 工作
+2025-07-02 21:26:35,948 - notion_client - INFO - Successfully updated record 8995e048-6778-4b2c-95ce-b32d7c127cab
+2025-07-02 21:26:35,949 - __main__ - INFO - Successfully classified record 8995e048-6778-4b2c-95ce-b32d7c127cab as: 工作
+2025-07-02 21:26:35,949 - __main__ - INFO - Record 98b40702-5af6-4945-a0af-128eae28ee3e already classified as: 工作
+2025-07-02 21:26:35,950 - __main__ - INFO - Processing record dcbf2b2b-ba87-4a5e-ad99-864eac0cfb70: 跟杜林看一下skipper怎么用...
+2025-07-02 21:26:35,950 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:26:36,674 - openai_client - INFO - OpenAI raw response: 社交/家庭
+2025-07-02 21:26:36,674 - openai_client - INFO - OpenAI classification result: 社交/家庭
+2025-07-02 21:26:36,674 - __main__ - INFO - Exact match found: 社交/家庭
+2025-07-02 21:26:36,674 - notion_client - INFO - Updating record dcbf2b2b-ba87-4a5e-ad99-864eac0cfb70 with classification: 社交/家庭
+2025-07-02 21:26:38,480 - notion_client - INFO - Successfully updated record dcbf2b2b-ba87-4a5e-ad99-864eac0cfb70
+2025-07-02 21:26:38,481 - __main__ - INFO - Successfully classified record dcbf2b2b-ba87-4a5e-ad99-864eac0cfb70 as: 社交/家庭
+2025-07-02 21:26:38,481 - __main__ - INFO - Processing record f14cc6da-b8ed-41a9-98c3-227ff601af24: 开车去公司...
+2025-07-02 21:26:38,482 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-02 21:26:39,126 - openai_client - INFO - OpenAI raw response: 通勤
+2025-07-02 21:26:39,126 - openai_client - INFO - OpenAI classification result: 通勤
+2025-07-02 21:26:39,126 - __main__ - INFO - Exact match found: 通勤
+2025-07-02 21:26:39,126 - notion_client - INFO - Updating record f14cc6da-b8ed-41a9-98c3-227ff601af24 with classification: 通勤
+2025-07-02 21:26:40,965 - notion_client - INFO - Successfully updated record f14cc6da-b8ed-41a9-98c3-227ff601af24
+2025-07-02 21:26:40,966 - __main__ - INFO - Successfully classified record f14cc6da-b8ed-41a9-98c3-227ff601af24 as: 通勤
+2025-07-02 21:26:40,967 - __main__ - INFO - Classification complete: 9 records classified
+2025-07-02 21:26:40,967 - __main__ - INFO - Classification completed successfully
+2025-07-07 01:34:42,183 - notion_client - INFO - Notion client initialized
+2025-07-07 01:34:42,184 - openai_client - INFO - OpenAI client initialized - model: llama3.1:latest
+2025-07-07 01:34:42,184 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-07 01:34:42,184 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-07 01:34:42,184 - __main__ - INFO - Processing time records for date: 2025-07-07
+2025-07-07 01:34:42,184 - openai_client - INFO - Testing OpenAI connection...
+2025-07-07 01:34:45,307 - openai_client - INFO - OpenAI connection test successful: OK
+2025-07-07 01:34:45,308 - notion_client - INFO - Fetching classification options from database schema
+2025-07-07 01:34:46,444 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-07 01:34:46,445 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-07 01:34:46,445 - notion_client - INFO - Fetching time records for date: 2025-07-07
+2025-07-07 01:34:49,196 - notion_client - INFO - Successfully fetched 0 time records
+2025-07-07 01:34:49,197 - __main__ - INFO - No time records found for 2025-07-07
+2025-07-07 01:34:49,198 - __main__ - INFO - Classification completed successfully
+2025-07-09 08:57:58,202 - notion_client - INFO - Notion client initialized
+2025-07-09 08:57:58,202 - openai_client - INFO - OpenAI client initialized - model: llama3.1:latest
+2025-07-09 08:57:58,202 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-09 08:57:58,203 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-09 08:57:58,207 - __main__ - INFO - Processing time records for date: 2025-07-08
+2025-07-09 08:57:58,207 - openai_client - INFO - Testing OpenAI connection...
+2025-07-09 08:58:01,635 - openai_client - INFO - OpenAI connection test successful: OK
+2025-07-09 08:58:01,635 - notion_client - INFO - Fetching classification options from database schema
+2025-07-09 08:58:02,837 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-09 08:58:02,838 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-09 08:58:02,839 - notion_client - INFO - Fetching time records for date: 2025-07-08
+2025-07-09 08:58:03,831 - notion_client - INFO - Successfully fetched 17 time records
+2025-07-09 08:58:03,832 - __main__ - INFO - Found 17 time records for 2025-07-08
+2025-07-09 08:58:03,832 - __main__ - INFO - Processing record 009b5152-d105-4a4d-bf27-cb2943497f6b: 不知道在干嘛...
+2025-07-09 08:58:03,832 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:04,771 - openai_client - INFO - OpenAI raw response: 休息/放松
+2025-07-09 08:58:04,771 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-07-09 08:58:04,771 - __main__ - INFO - Exact match found: 休息/放松
+2025-07-09 08:58:04,771 - notion_client - INFO - Updating record 009b5152-d105-4a4d-bf27-cb2943497f6b with classification: 休息/放松
+2025-07-09 08:58:05,706 - notion_client - INFO - Successfully updated record 009b5152-d105-4a4d-bf27-cb2943497f6b
+2025-07-09 08:58:05,707 - __main__ - INFO - Successfully classified record 009b5152-d105-4a4d-bf27-cb2943497f6b as: 休息/放松
+2025-07-09 08:58:05,707 - __main__ - INFO - Processing record 7c6ae159-b0b7-4ad8-9dd9-b229503881cc: 不知道在干嘛...
+2025-07-09 08:58:05,707 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:05,978 - openai_client - INFO - OpenAI raw response: 休息/放松
+2025-07-09 08:58:05,978 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-07-09 08:58:05,978 - __main__ - INFO - Exact match found: 休息/放松
+2025-07-09 08:58:05,978 - notion_client - INFO - Updating record 7c6ae159-b0b7-4ad8-9dd9-b229503881cc with classification: 休息/放松
+2025-07-09 08:58:06,845 - notion_client - INFO - Successfully updated record 7c6ae159-b0b7-4ad8-9dd9-b229503881cc
+2025-07-09 08:58:06,846 - __main__ - INFO - Successfully classified record 7c6ae159-b0b7-4ad8-9dd9-b229503881cc as: 休息/放松
+2025-07-09 08:58:06,846 - __main__ - INFO - Processing record c6c07fc1-4e13-470c-a7fa-5f9e4c704029: 给宝儿贴膏药...
+2025-07-09 08:58:06,847 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:07,381 - openai_client - INFO - OpenAI raw response: 健康/运动
+2025-07-09 08:58:07,381 - openai_client - INFO - OpenAI classification result: 健康/运动
+2025-07-09 08:58:07,382 - __main__ - INFO - Exact match found: 健康/运动
+2025-07-09 08:58:07,382 - notion_client - INFO - Updating record c6c07fc1-4e13-470c-a7fa-5f9e4c704029 with classification: 健康/运动
+2025-07-09 08:58:08,241 - notion_client - INFO - Successfully updated record c6c07fc1-4e13-470c-a7fa-5f9e4c704029
+2025-07-09 08:58:08,242 - __main__ - INFO - Successfully classified record c6c07fc1-4e13-470c-a7fa-5f9e4c704029 as: 健康/运动
+2025-07-09 08:58:08,242 - __main__ - INFO - Processing record 2088d477-f7f1-41e2-bc87-df74e6caea96: 看了一会婚纱照...
+2025-07-09 08:58:08,243 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:08,861 - openai_client - INFO - OpenAI raw response: 休息/放松
+2025-07-09 08:58:08,862 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-07-09 08:58:08,862 - __main__ - INFO - Exact match found: 休息/放松
+2025-07-09 08:58:08,862 - notion_client - INFO - Updating record 2088d477-f7f1-41e2-bc87-df74e6caea96 with classification: 休息/放松
+2025-07-09 08:58:11,656 - notion_client - INFO - Successfully updated record 2088d477-f7f1-41e2-bc87-df74e6caea96
+2025-07-09 08:58:11,657 - __main__ - INFO - Successfully classified record 2088d477-f7f1-41e2-bc87-df74e6caea96 as: 休息/放松
+2025-07-09 08:58:11,659 - __main__ - INFO - Processing record d13d3df4-e452-4999-8b8c-dc138795bd40: 晚饭...
+2025-07-09 08:58:11,659 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:12,336 - openai_client - INFO - OpenAI raw response: 生活事务
+2025-07-09 08:58:12,336 - openai_client - INFO - OpenAI classification result: 生活事务
+2025-07-09 08:58:12,336 - __main__ - INFO - Exact match found: 生活事务
+2025-07-09 08:58:12,336 - notion_client - INFO - Updating record d13d3df4-e452-4999-8b8c-dc138795bd40 with classification: 生活事务
+2025-07-09 08:58:13,241 - notion_client - INFO - Successfully updated record d13d3df4-e452-4999-8b8c-dc138795bd40
+2025-07-09 08:58:13,242 - __main__ - INFO - Successfully classified record d13d3df4-e452-4999-8b8c-dc138795bd40 as: 生活事务
+2025-07-09 08:58:13,243 - __main__ - INFO - Processing record f8accd23-9a69-40c8-99c8-2c765b9f416e: 工作...
+2025-07-09 08:58:13,243 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:13,716 - openai_client - INFO - OpenAI raw response: 工作
+2025-07-09 08:58:13,716 - openai_client - INFO - OpenAI classification result: 工作
+2025-07-09 08:58:13,716 - __main__ - INFO - Exact match found: 工作
+2025-07-09 08:58:13,716 - notion_client - INFO - Updating record f8accd23-9a69-40c8-99c8-2c765b9f416e with classification: 工作
+2025-07-09 08:58:14,687 - notion_client - INFO - Successfully updated record f8accd23-9a69-40c8-99c8-2c765b9f416e
+2025-07-09 08:58:14,687 - __main__ - INFO - Successfully classified record f8accd23-9a69-40c8-99c8-2c765b9f416e as: 工作
+2025-07-09 08:58:14,687 - __main__ - INFO - Processing record e0bc9e55-fb43-4e0a-bc99-0e8dea220c90: 继续上班...
+2025-07-09 08:58:14,687 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:15,145 - openai_client - INFO - OpenAI raw response: 工作
+2025-07-09 08:58:15,145 - openai_client - INFO - OpenAI classification result: 工作
+2025-07-09 08:58:15,145 - __main__ - INFO - Exact match found: 工作
+2025-07-09 08:58:15,145 - notion_client - INFO - Updating record e0bc9e55-fb43-4e0a-bc99-0e8dea220c90 with classification: 工作
+2025-07-09 08:58:16,211 - notion_client - INFO - Successfully updated record e0bc9e55-fb43-4e0a-bc99-0e8dea220c90
+2025-07-09 08:58:16,212 - __main__ - INFO - Successfully classified record e0bc9e55-fb43-4e0a-bc99-0e8dea220c90 as: 工作
+2025-07-09 08:58:16,212 - __main__ - INFO - Processing record d256a7fe-c415-422a-a6c6-dd436ca06389: 去车上休息...
+2025-07-09 08:58:16,213 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:16,984 - openai_client - INFO - OpenAI raw response: 休息/放松
+2025-07-09 08:58:16,984 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-07-09 08:58:16,985 - __main__ - INFO - Exact match found: 休息/放松
+2025-07-09 08:58:16,985 - notion_client - INFO - Updating record d256a7fe-c415-422a-a6c6-dd436ca06389 with classification: 休息/放松
+2025-07-09 08:58:18,086 - notion_client - INFO - Successfully updated record d256a7fe-c415-422a-a6c6-dd436ca06389
+2025-07-09 08:58:18,087 - __main__ - INFO - Successfully classified record d256a7fe-c415-422a-a6c6-dd436ca06389 as: 休息/放松
+2025-07-09 08:58:18,087 - __main__ - INFO - Processing record 441708b9-2b4c-4a55-8392-b06b64523cb5: 吃午饭...
+2025-07-09 08:58:18,087 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:18,700 - openai_client - INFO - OpenAI raw response: 休息/放松
+2025-07-09 08:58:18,700 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-07-09 08:58:18,701 - __main__ - INFO - Exact match found: 休息/放松
+2025-07-09 08:58:18,701 - notion_client - INFO - Updating record 441708b9-2b4c-4a55-8392-b06b64523cb5 with classification: 休息/放松
+2025-07-09 08:58:19,790 - notion_client - INFO - Successfully updated record 441708b9-2b4c-4a55-8392-b06b64523cb5
+2025-07-09 08:58:19,791 - __main__ - INFO - Successfully classified record 441708b9-2b4c-4a55-8392-b06b64523cb5 as: 休息/放松
+2025-07-09 08:58:19,791 - __main__ - INFO - Processing record 5271271a-ab8a-4860-b0c7-623f2518e1aa: 在车上坐了一会...
+2025-07-09 08:58:19,791 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:20,442 - openai_client - INFO - OpenAI raw response: 通勤
+2025-07-09 08:58:20,442 - openai_client - INFO - OpenAI classification result: 通勤
+2025-07-09 08:58:20,443 - __main__ - INFO - Exact match found: 通勤
+2025-07-09 08:58:20,443 - notion_client - INFO - Updating record 5271271a-ab8a-4860-b0c7-623f2518e1aa with classification: 通勤
+2025-07-09 08:58:21,533 - notion_client - INFO - Successfully updated record 5271271a-ab8a-4860-b0c7-623f2518e1aa
+2025-07-09 08:58:21,534 - __main__ - INFO - Successfully classified record 5271271a-ab8a-4860-b0c7-623f2518e1aa as: 通勤
+2025-07-09 08:58:21,535 - __main__ - INFO - Processing record c976f017-fe17-4d06-bc73-21fa1bb2ec5d: 开车回家...
+2025-07-09 08:58:21,535 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:22,069 - openai_client - INFO - OpenAI raw response: 生活事务
+2025-07-09 08:58:22,069 - openai_client - INFO - OpenAI classification result: 生活事务
+2025-07-09 08:58:22,069 - __main__ - INFO - Exact match found: 生活事务
+2025-07-09 08:58:22,069 - notion_client - INFO - Updating record c976f017-fe17-4d06-bc73-21fa1bb2ec5d with classification: 生活事务
+2025-07-09 08:58:27,815 - notion_client - INFO - Successfully updated record c976f017-fe17-4d06-bc73-21fa1bb2ec5d
+2025-07-09 08:58:27,816 - __main__ - INFO - Successfully classified record c976f017-fe17-4d06-bc73-21fa1bb2ec5d as: 生活事务
+2025-07-09 08:58:27,816 - __main__ - INFO - Processing record 54f63721-a14b-4d70-a765-4e049a6e0c1c: 用除尘拖拖地...
+2025-07-09 08:58:27,816 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:28,486 - openai_client - INFO - OpenAI raw response: 生活事务
+2025-07-09 08:58:28,486 - openai_client - INFO - OpenAI classification result: 生活事务
+2025-07-09 08:58:28,486 - __main__ - INFO - Exact match found: 生活事务
+2025-07-09 08:58:28,486 - notion_client - INFO - Updating record 54f63721-a14b-4d70-a765-4e049a6e0c1c with classification: 生活事务
+2025-07-09 08:58:29,899 - notion_client - INFO - Successfully updated record 54f63721-a14b-4d70-a765-4e049a6e0c1c
+2025-07-09 08:58:29,900 - __main__ - INFO - Successfully classified record 54f63721-a14b-4d70-a765-4e049a6e0c1c as: 生活事务
+2025-07-09 08:58:29,900 - __main__ - INFO - Processing record 55ede778-6aa8-4e02-9821-63ccd1890dee: 看recvData卡住问题，跑了两个大例子，未复现...
+2025-07-09 08:58:29,901 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:30,503 - openai_client - INFO - OpenAI raw response: 学习
+2025-07-09 08:58:30,503 - openai_client - INFO - OpenAI classification result: 学习
+2025-07-09 08:58:30,503 - __main__ - INFO - Exact match found: 学习
+2025-07-09 08:58:30,503 - notion_client - INFO - Updating record 55ede778-6aa8-4e02-9821-63ccd1890dee with classification: 学习
+2025-07-09 08:58:31,310 - notion_client - INFO - Successfully updated record 55ede778-6aa8-4e02-9821-63ccd1890dee
+2025-07-09 08:58:31,311 - __main__ - INFO - Successfully classified record 55ede778-6aa8-4e02-9821-63ccd1890dee as: 学习
+2025-07-09 08:58:31,311 - __main__ - INFO - Processing record 18355bc7-51c3-486c-85c2-b112891be1c3: 开车去公司...
+2025-07-09 08:58:31,311 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:31,813 - openai_client - INFO - OpenAI raw response: 通勤
+2025-07-09 08:58:31,813 - openai_client - INFO - OpenAI classification result: 通勤
+2025-07-09 08:58:31,813 - __main__ - INFO - Exact match found: 通勤
+2025-07-09 08:58:31,813 - notion_client - INFO - Updating record 18355bc7-51c3-486c-85c2-b112891be1c3 with classification: 通勤
+2025-07-09 08:58:34,689 - notion_client - INFO - Successfully updated record 18355bc7-51c3-486c-85c2-b112891be1c3
+2025-07-09 08:58:34,689 - __main__ - INFO - Successfully classified record 18355bc7-51c3-486c-85c2-b112891be1c3 as: 通勤
+2025-07-09 08:58:34,689 - __main__ - INFO - Processing record f3667c3c-dbc0-4b20-8128-552b8a2cf2c9: 走路到店里取手机...
+2025-07-09 08:58:34,689 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:35,363 - openai_client - INFO - OpenAI raw response: 生活事务
+2025-07-09 08:58:35,363 - openai_client - INFO - OpenAI classification result: 生活事务
+2025-07-09 08:58:35,363 - __main__ - INFO - Exact match found: 生活事务
+2025-07-09 08:58:35,363 - notion_client - INFO - Updating record f3667c3c-dbc0-4b20-8128-552b8a2cf2c9 with classification: 生活事务
+2025-07-09 08:58:36,212 - notion_client - INFO - Successfully updated record f3667c3c-dbc0-4b20-8128-552b8a2cf2c9
+2025-07-09 08:58:36,213 - __main__ - INFO - Successfully classified record f3667c3c-dbc0-4b20-8128-552b8a2cf2c9 as: 生活事务
+2025-07-09 08:58:36,214 - __main__ - INFO - Processing record 93aa4e4a-72dd-4261-aa34-865a43ae9665: 开车去三林取手机...
+2025-07-09 08:58:36,214 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:36,752 - openai_client - INFO - OpenAI raw response: 生活事务
+2025-07-09 08:58:36,752 - openai_client - INFO - OpenAI classification result: 生活事务
+2025-07-09 08:58:36,752 - __main__ - INFO - Exact match found: 生活事务
+2025-07-09 08:58:36,752 - notion_client - INFO - Updating record 93aa4e4a-72dd-4261-aa34-865a43ae9665 with classification: 生活事务
+2025-07-09 08:58:37,861 - notion_client - INFO - Successfully updated record 93aa4e4a-72dd-4261-aa34-865a43ae9665
+2025-07-09 08:58:37,862 - __main__ - INFO - Successfully classified record 93aa4e4a-72dd-4261-aa34-865a43ae9665 as: 生活事务
+2025-07-09 08:58:37,862 - __main__ - INFO - Processing record 99ed01b4-ac07-4b3e-bd85-c01e124ffab7: 起床洗漱...
+2025-07-09 08:58:37,862 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-09 08:58:38,515 - openai_client - INFO - OpenAI raw response: 生活事务
+2025-07-09 08:58:38,515 - openai_client - INFO - OpenAI classification result: 生活事务
+2025-07-09 08:58:38,515 - __main__ - INFO - Exact match found: 生活事务
+2025-07-09 08:58:38,515 - notion_client - INFO - Updating record 99ed01b4-ac07-4b3e-bd85-c01e124ffab7 with classification: 生活事务
+2025-07-09 08:58:39,466 - notion_client - INFO - Successfully updated record 99ed01b4-ac07-4b3e-bd85-c01e124ffab7
+2025-07-09 08:58:39,467 - __main__ - INFO - Successfully classified record 99ed01b4-ac07-4b3e-bd85-c01e124ffab7 as: 生活事务
+2025-07-09 08:58:39,467 - __main__ - INFO - Classification complete: 17 records classified
+2025-07-09 08:58:39,468 - __main__ - INFO - Classification completed successfully
+2025-07-14 21:46:01,666 - notion_client - INFO - Notion client initialized
+2025-07-14 21:46:01,666 - openai_client - INFO - OpenAI client initialized - model: llama3.1:latest
+2025-07-14 21:46:01,666 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-14 21:46:01,666 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-14 21:46:01,666 - __main__ - INFO - Processing time records for date: 2025-07-14
+2025-07-14 21:46:01,666 - openai_client - INFO - Testing OpenAI connection...
+2025-07-14 21:46:01,671 - openai_client - ERROR - OpenAI connection test failed: Cannot connect to host localhost:11434 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 11434, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 11434)]
+2025-07-14 21:46:01,671 - __main__ - ERROR - OpenAI connection test failed
+2025-07-14 21:46:01,671 - __main__ - ERROR - Classification failed
+2025-07-14 21:46:05,308 - notion_client - INFO - Notion client initialized
+2025-07-14 21:46:05,308 - openai_client - INFO - OpenAI client initialized - model: llama3.1:latest
+2025-07-14 21:46:05,308 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-14 21:46:05,308 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-14 21:46:05,308 - __main__ - INFO - Processing time records for date: 2025-07-14
+2025-07-14 21:46:05,308 - openai_client - INFO - Testing OpenAI connection...
+2025-07-14 21:46:05,312 - openai_client - ERROR - OpenAI connection test failed: Cannot connect to host localhost:11434 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 11434, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 11434)]
+2025-07-14 21:46:05,312 - __main__ - ERROR - OpenAI connection test failed
+2025-07-14 21:46:05,312 - __main__ - ERROR - Classification failed
+2025-07-14 21:48:57,359 - notion_client - INFO - Notion client initialized
+2025-07-14 21:48:57,359 - openai_client - INFO - OpenAI client initialized - model: llama3.1:latest
+2025-07-14 21:48:57,359 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-14 21:48:57,359 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-14 21:48:57,359 - __main__ - INFO - Processing time records for date: 2025-07-14
+2025-07-14 21:48:57,359 - openai_client - INFO - Testing OpenAI connection...
+2025-07-14 21:48:57,363 - openai_client - ERROR - OpenAI connection test failed: Cannot connect to host localhost:11434 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 11434, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 11434)]
+2025-07-14 21:48:57,363 - __main__ - ERROR - OpenAI connection test failed
+2025-07-14 21:48:57,363 - __main__ - ERROR - Classification failed
+2025-07-14 21:49:01,847 - notion_client - INFO - Notion client initialized
+2025-07-14 21:49:01,847 - openai_client - INFO - OpenAI client initialized - model: llama3.1:latest
+2025-07-14 21:49:01,847 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-14 21:49:01,847 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-14 21:49:01,847 - __main__ - INFO - Processing time records for date: 2025-07-14
+2025-07-14 21:49:01,847 - openai_client - INFO - Testing OpenAI connection...
+2025-07-14 21:49:01,851 - openai_client - ERROR - OpenAI connection test failed: Cannot connect to host localhost:11434 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 11434, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 11434)]
+2025-07-14 21:49:01,851 - __main__ - ERROR - OpenAI connection test failed
+2025-07-14 21:49:01,851 - __main__ - ERROR - Classification failed
+2025-07-14 21:50:19,618 - notion_client - INFO - Notion client initialized
+2025-07-14 21:50:19,618 - openai_client - INFO - OpenAI client initialized - model: llama3.1:latest
+2025-07-14 21:50:19,618 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-14 21:50:19,618 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-14 21:50:19,618 - __main__ - INFO - Processing time records for date: 2025-07-14
+2025-07-14 21:50:19,618 - openai_client - INFO - Testing OpenAI connection...
+2025-07-14 21:50:19,622 - openai_client - ERROR - OpenAI connection test failed: Cannot connect to host localhost:11434 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 11434, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 11434)]
+2025-07-14 21:50:19,622 - __main__ - ERROR - OpenAI connection test failed
+2025-07-14 21:50:19,622 - __main__ - ERROR - Classification failed
+2025-07-14 21:50:37,896 - notion_client - INFO - Notion client initialized
+2025-07-14 21:50:37,896 - openai_client - INFO - OpenAI client initialized - model: llama3.1:latest
+2025-07-14 21:50:37,896 - __main__ - INFO - TimeRecordClassifier initialized
+2025-07-14 21:50:37,896 - __main__ - INFO - Starting Notion Time Record Auto-Classification
+2025-07-14 21:50:37,896 - __main__ - INFO - Processing time records for date: 2025-07-14
+2025-07-14 21:50:37,896 - openai_client - INFO - Testing OpenAI connection...
+2025-07-14 21:50:41,325 - openai_client - INFO - OpenAI connection test successful: OK
+2025-07-14 21:50:41,326 - notion_client - INFO - Fetching classification options from database schema
+2025-07-14 21:50:43,953 - notion_client - INFO - Found 7 classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-14 21:50:43,953 - __main__ - INFO - Available classification options: ['工作', '学习', '休息/放松', '生活事务', '通勤', '社交/家庭', '健康/运动']
+2025-07-14 21:50:43,954 - notion_client - INFO - Fetching time records for date: 2025-07-14
+2025-07-14 21:50:45,950 - notion_client - INFO - Successfully fetched 20 time records
+2025-07-14 21:50:45,950 - __main__ - INFO - Found 20 time records for 2025-07-14
+2025-07-14 21:50:45,951 - __main__ - INFO - Processing record f84c752f-dd52-4e91-b1f8-5c41c4f2c924: 做时间记录...
+2025-07-14 21:50:45,951 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:50:46,751 - openai_client - INFO - OpenAI raw response: 学习
+2025-07-14 21:50:46,752 - openai_client - INFO - OpenAI classification result: 学习
+2025-07-14 21:50:46,752 - __main__ - INFO - Exact match found: 学习
+2025-07-14 21:50:46,753 - notion_client - INFO - Updating record f84c752f-dd52-4e91-b1f8-5c41c4f2c924 with classification: 学习
+2025-07-14 21:50:49,448 - notion_client - INFO - Successfully updated record f84c752f-dd52-4e91-b1f8-5c41c4f2c924
+2025-07-14 21:50:49,449 - __main__ - INFO - Successfully classified record f84c752f-dd52-4e91-b1f8-5c41c4f2c924 as: 学习
+2025-07-14 21:50:49,450 - __main__ - INFO - Processing record 07fea25a-6c0a-487c-b363-07f69b543040: 处理因为level太大而crash的问题，当然中间遇到了编译问题，还问了阳哥，实际上是我自己编成了skipper...
+2025-07-14 21:50:49,450 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:50:50,137 - openai_client - INFO - OpenAI raw response: 工作
+2025-07-14 21:50:50,137 - openai_client - INFO - OpenAI classification result: 工作
+2025-07-14 21:50:50,138 - __main__ - INFO - Exact match found: 工作
+2025-07-14 21:50:50,138 - notion_client - INFO - Updating record 07fea25a-6c0a-487c-b363-07f69b543040 with classification: 工作
+2025-07-14 21:50:52,403 - notion_client - INFO - Successfully updated record 07fea25a-6c0a-487c-b363-07f69b543040
+2025-07-14 21:50:52,403 - __main__ - INFO - Successfully classified record 07fea25a-6c0a-487c-b363-07f69b543040 as: 工作
+2025-07-14 21:50:52,404 - __main__ - INFO - Processing record c3b6a1c7-ab1a-40a6-b55f-cf7fbfaf94f0: 写周报...
+2025-07-14 21:50:52,404 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:50:53,029 - openai_client - INFO - OpenAI raw response: 工作
+2025-07-14 21:50:53,029 - openai_client - INFO - OpenAI classification result: 工作
+2025-07-14 21:50:53,030 - __main__ - INFO - Exact match found: 工作
+2025-07-14 21:50:53,030 - notion_client - INFO - Updating record c3b6a1c7-ab1a-40a6-b55f-cf7fbfaf94f0 with classification: 工作
+2025-07-14 21:50:56,922 - notion_client - INFO - Successfully updated record c3b6a1c7-ab1a-40a6-b55f-cf7fbfaf94f0
+2025-07-14 21:50:56,923 - __main__ - INFO - Successfully classified record c3b6a1c7-ab1a-40a6-b55f-cf7fbfaf94f0 as: 工作
+2025-07-14 21:50:56,924 - __main__ - INFO - Processing record 14a3766a-cd25-47d3-a835-6bfaed3f5fb3: 午休...
+2025-07-14 21:50:56,924 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:50:57,696 - openai_client - INFO - OpenAI raw response: 休息/放松
+2025-07-14 21:50:57,697 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-07-14 21:50:57,697 - __main__ - INFO - Exact match found: 休息/放松
+2025-07-14 21:50:57,697 - notion_client - INFO - Updating record 14a3766a-cd25-47d3-a835-6bfaed3f5fb3 with classification: 休息/放松
+2025-07-14 21:51:00,222 - notion_client - INFO - Successfully updated record 14a3766a-cd25-47d3-a835-6bfaed3f5fb3
+2025-07-14 21:51:00,224 - __main__ - INFO - Successfully classified record 14a3766a-cd25-47d3-a835-6bfaed3f5fb3 as: 休息/放松
+2025-07-14 21:51:00,224 - __main__ - INFO - Processing record dcf8219b-4e04-456b-9015-f8f3630e459e: 看手机...
+2025-07-14 21:51:00,224 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:00,967 - openai_client - INFO - OpenAI raw response: 休息/放松
+2025-07-14 21:51:00,968 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-07-14 21:51:00,969 - __main__ - INFO - Exact match found: 休息/放松
+2025-07-14 21:51:00,969 - notion_client - INFO - Updating record dcf8219b-4e04-456b-9015-f8f3630e459e with classification: 休息/放松
+2025-07-14 21:51:03,991 - notion_client - INFO - Successfully updated record dcf8219b-4e04-456b-9015-f8f3630e459e
+2025-07-14 21:51:03,992 - __main__ - INFO - Successfully classified record dcf8219b-4e04-456b-9015-f8f3630e459e as: 休息/放松
+2025-07-14 21:51:03,992 - __main__ - INFO - Processing record 8f1ab27c-d060-439e-ac7f-9da75fb995f9: 跟豪哥开会看踩内存问题，后面发现是代码未合问题...
+2025-07-14 21:51:03,992 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:04,660 - openai_client - INFO - OpenAI raw response: 工作
+2025-07-14 21:51:04,660 - openai_client - INFO - OpenAI classification result: 工作
+2025-07-14 21:51:04,661 - __main__ - INFO - Exact match found: 工作
+2025-07-14 21:51:04,661 - notion_client - INFO - Updating record 8f1ab27c-d060-439e-ac7f-9da75fb995f9 with classification: 工作
+2025-07-14 21:51:09,965 - notion_client - INFO - Successfully updated record 8f1ab27c-d060-439e-ac7f-9da75fb995f9
+2025-07-14 21:51:09,966 - __main__ - INFO - Successfully classified record 8f1ab27c-d060-439e-ac7f-9da75fb995f9 as: 工作
+2025-07-14 21:51:09,967 - __main__ - INFO - Processing record 19c4b70b-9f3f-43fb-8282-6d3eb61e7eb4: 跟胡翔开会看问题...
+2025-07-14 21:51:09,967 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:10,599 - openai_client - INFO - OpenAI raw response: 工作
+2025-07-14 21:51:10,600 - openai_client - INFO - OpenAI classification result: 工作
+2025-07-14 21:51:10,600 - __main__ - INFO - Exact match found: 工作
+2025-07-14 21:51:10,601 - notion_client - INFO - Updating record 19c4b70b-9f3f-43fb-8282-6d3eb61e7eb4 with classification: 工作
+2025-07-14 21:51:13,306 - notion_client - INFO - Successfully updated record 19c4b70b-9f3f-43fb-8282-6d3eb61e7eb4
+2025-07-14 21:51:13,307 - __main__ - INFO - Successfully classified record 19c4b70b-9f3f-43fb-8282-6d3eb61e7eb4 as: 工作
+2025-07-14 21:51:13,308 - __main__ - INFO - Processing record 784c2f19-1b07-47f9-9246-f7959b234a54: 给车子充电...
+2025-07-14 21:51:13,308 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:13,993 - openai_client - INFO - OpenAI raw response: 生活事务
+2025-07-14 21:51:13,993 - openai_client - INFO - OpenAI classification result: 生活事务
+2025-07-14 21:51:13,994 - __main__ - INFO - Exact match found: 生活事务
+2025-07-14 21:51:13,994 - notion_client - INFO - Updating record 784c2f19-1b07-47f9-9246-f7959b234a54 with classification: 生活事务
+2025-07-14 21:51:16,618 - notion_client - INFO - Successfully updated record 784c2f19-1b07-47f9-9246-f7959b234a54
+2025-07-14 21:51:16,619 - __main__ - INFO - Successfully classified record 784c2f19-1b07-47f9-9246-f7959b234a54 as: 生活事务
+2025-07-14 21:51:16,619 - __main__ - INFO - Processing record 49ca5e75-9e68-48ac-b711-d831158a2763: 开车去公司...
+2025-07-14 21:51:16,620 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:17,292 - openai_client - INFO - OpenAI raw response: 通勤
+2025-07-14 21:51:17,292 - openai_client - INFO - OpenAI classification result: 通勤
+2025-07-14 21:51:17,293 - __main__ - INFO - Exact match found: 通勤
+2025-07-14 21:51:17,293 - notion_client - INFO - Updating record 49ca5e75-9e68-48ac-b711-d831158a2763 with classification: 通勤
+2025-07-14 21:51:19,615 - notion_client - INFO - Successfully updated record 49ca5e75-9e68-48ac-b711-d831158a2763
+2025-07-14 21:51:19,616 - __main__ - INFO - Successfully classified record 49ca5e75-9e68-48ac-b711-d831158a2763 as: 通勤
+2025-07-14 21:51:19,616 - __main__ - INFO - Processing record 87f06f64-d047-4b50-bbfa-4d6fbec631c2: 又睡了一会...
+2025-07-14 21:51:19,616 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:20,375 - openai_client - INFO - OpenAI raw response: 休息/放松
+2025-07-14 21:51:20,376 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-07-14 21:51:20,376 - __main__ - INFO - Exact match found: 休息/放松
+2025-07-14 21:51:20,377 - notion_client - INFO - Updating record 87f06f64-d047-4b50-bbfa-4d6fbec631c2 with classification: 休息/放松
+2025-07-14 21:51:23,342 - notion_client - INFO - Successfully updated record 87f06f64-d047-4b50-bbfa-4d6fbec631c2
+2025-07-14 21:51:23,343 - __main__ - INFO - Successfully classified record 87f06f64-d047-4b50-bbfa-4d6fbec631c2 as: 休息/放松
+2025-07-14 21:51:23,343 - __main__ - INFO - Processing record d7be3685-32ac-4b74-ac25-6aec03cb75d5: 起床洗漱...
+2025-07-14 21:51:23,344 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:24,013 - openai_client - INFO - OpenAI raw response: 生活事务
+2025-07-14 21:51:24,014 - openai_client - INFO - OpenAI classification result: 生活事务
+2025-07-14 21:51:24,015 - __main__ - INFO - Exact match found: 生活事务
+2025-07-14 21:51:24,015 - notion_client - INFO - Updating record d7be3685-32ac-4b74-ac25-6aec03cb75d5 with classification: 生活事务
+2025-07-14 21:51:33,034 - notion_client - INFO - Successfully updated record d7be3685-32ac-4b74-ac25-6aec03cb75d5
+2025-07-14 21:51:33,035 - __main__ - INFO - Successfully classified record d7be3685-32ac-4b74-ac25-6aec03cb75d5 as: 生活事务
+2025-07-14 21:51:33,036 - __main__ - INFO - Processing record 808bdc50-1ea1-4487-a19e-aebc28c6b989: 看了会手机，想工作但是感觉这个时候看不进代码...
+2025-07-14 21:51:33,036 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:33,796 - openai_client - INFO - OpenAI raw response: 休息/放松
+2025-07-14 21:51:33,797 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-07-14 21:51:33,797 - __main__ - INFO - Exact match found: 休息/放松
+2025-07-14 21:51:33,798 - notion_client - INFO - Updating record 808bdc50-1ea1-4487-a19e-aebc28c6b989 with classification: 休息/放松
+2025-07-14 21:51:35,542 - notion_client - INFO - Successfully updated record 808bdc50-1ea1-4487-a19e-aebc28c6b989
+2025-07-14 21:51:35,543 - __main__ - INFO - Successfully classified record 808bdc50-1ea1-4487-a19e-aebc28c6b989 as: 休息/放松
+2025-07-14 21:51:35,543 - __main__ - INFO - Processing record 94092b35-bd86-4d3f-b1a9-b075345be359: 看了会胡翔说的cached跟机器有关的问题...
+2025-07-14 21:51:35,544 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:36,183 - openai_client - INFO - OpenAI raw response: 学习
+2025-07-14 21:51:36,184 - openai_client - INFO - OpenAI classification result: 学习
+2025-07-14 21:51:36,184 - __main__ - INFO - Exact match found: 学习
+2025-07-14 21:51:36,185 - notion_client - INFO - Updating record 94092b35-bd86-4d3f-b1a9-b075345be359 with classification: 学习
+2025-07-14 21:51:40,485 - notion_client - INFO - Successfully updated record 94092b35-bd86-4d3f-b1a9-b075345be359
+2025-07-14 21:51:40,487 - __main__ - INFO - Successfully classified record 94092b35-bd86-4d3f-b1a9-b075345be359 as: 学习
+2025-07-14 21:51:40,487 - __main__ - INFO - Processing record cb1098c8-e1ad-4312-9e83-db9225ee3fd2: 吃晚饭...
+2025-07-14 21:51:40,487 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:41,178 - openai_client - INFO - OpenAI raw response: 生活事务
+2025-07-14 21:51:41,179 - openai_client - INFO - OpenAI classification result: 生活事务
+2025-07-14 21:51:41,179 - __main__ - INFO - Exact match found: 生活事务
+2025-07-14 21:51:41,179 - notion_client - INFO - Updating record cb1098c8-e1ad-4312-9e83-db9225ee3fd2 with classification: 生活事务
+2025-07-14 21:51:43,622 - notion_client - INFO - Successfully updated record cb1098c8-e1ad-4312-9e83-db9225ee3fd2
+2025-07-14 21:51:43,623 - __main__ - INFO - Successfully classified record cb1098c8-e1ad-4312-9e83-db9225ee3fd2 as: 生活事务
+2025-07-14 21:51:43,623 - __main__ - INFO - Processing record 10964a69-199e-4e6d-b882-56c393059b15: 更新DP api文档...
+2025-07-14 21:51:43,623 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:44,248 - openai_client - INFO - OpenAI raw response: 工作
+2025-07-14 21:51:44,249 - openai_client - INFO - OpenAI classification result: 工作
+2025-07-14 21:51:44,249 - __main__ - INFO - Exact match found: 工作
+2025-07-14 21:51:44,250 - notion_client - INFO - Updating record 10964a69-199e-4e6d-b882-56c393059b15 with classification: 工作
+2025-07-14 21:51:47,954 - notion_client - INFO - Successfully updated record 10964a69-199e-4e6d-b882-56c393059b15
+2025-07-14 21:51:47,955 - __main__ - INFO - Successfully classified record 10964a69-199e-4e6d-b882-56c393059b15 as: 工作
+2025-07-14 21:51:47,956 - __main__ - INFO - Processing record 2e45daeb-8e82-486f-bef9-72aa5317ab0a: 更新DP文档...
+2025-07-14 21:51:47,956 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:48,566 - openai_client - INFO - OpenAI raw response: 工作
+2025-07-14 21:51:48,566 - openai_client - INFO - OpenAI classification result: 工作
+2025-07-14 21:51:48,567 - __main__ - INFO - Exact match found: 工作
+2025-07-14 21:51:48,567 - notion_client - INFO - Updating record 2e45daeb-8e82-486f-bef9-72aa5317ab0a with classification: 工作
+2025-07-14 21:51:50,310 - notion_client - INFO - Successfully updated record 2e45daeb-8e82-486f-bef9-72aa5317ab0a
+2025-07-14 21:51:50,311 - __main__ - INFO - Successfully classified record 2e45daeb-8e82-486f-bef9-72aa5317ab0a as: 工作
+2025-07-14 21:51:50,312 - __main__ - INFO - Processing record 53a68253-de68-4e1b-a6aa-a7ac759bee24: 来会议室，整理下一步行动...
+2025-07-14 21:51:50,312 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:50,924 - openai_client - INFO - OpenAI raw response: 工作
+2025-07-14 21:51:50,925 - openai_client - INFO - OpenAI classification result: 工作
+2025-07-14 21:51:50,925 - __main__ - INFO - Exact match found: 工作
+2025-07-14 21:51:50,925 - notion_client - INFO - Updating record 53a68253-de68-4e1b-a6aa-a7ac759bee24 with classification: 工作
+2025-07-14 21:51:55,282 - notion_client - INFO - Successfully updated record 53a68253-de68-4e1b-a6aa-a7ac759bee24
+2025-07-14 21:51:55,283 - __main__ - INFO - Successfully classified record 53a68253-de68-4e1b-a6aa-a7ac759bee24 as: 工作
+2025-07-14 21:51:55,284 - __main__ - INFO - Processing record 7deac165-ae73-4127-ae4c-ef74b095f03e: 阅读搞定II第1、2章记笔记...
+2025-07-14 21:51:55,284 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:55,919 - openai_client - INFO - OpenAI raw response: 学习
+2025-07-14 21:51:55,920 - openai_client - INFO - OpenAI classification result: 学习
+2025-07-14 21:51:55,921 - __main__ - INFO - Exact match found: 学习
+2025-07-14 21:51:55,921 - notion_client - INFO - Updating record 7deac165-ae73-4127-ae4c-ef74b095f03e with classification: 学习
+2025-07-14 21:51:57,910 - notion_client - INFO - Successfully updated record 7deac165-ae73-4127-ae4c-ef74b095f03e
+2025-07-14 21:51:57,911 - __main__ - INFO - Successfully classified record 7deac165-ae73-4127-ae4c-ef74b095f03e as: 学习
+2025-07-14 21:51:57,911 - __main__ - INFO - Processing record 5b908769-4feb-4441-83e9-c6b3604b6577: 午饭...
+2025-07-14 21:51:57,911 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:51:58,689 - openai_client - INFO - OpenAI raw response: 休息/放松
+2025-07-14 21:51:58,689 - openai_client - INFO - OpenAI classification result: 休息/放松
+2025-07-14 21:51:58,690 - __main__ - INFO - Exact match found: 休息/放松
+2025-07-14 21:51:58,690 - notion_client - INFO - Updating record 5b908769-4feb-4441-83e9-c6b3604b6577 with classification: 休息/放松
+2025-07-14 21:52:05,550 - notion_client - INFO - Successfully updated record 5b908769-4feb-4441-83e9-c6b3604b6577
+2025-07-14 21:52:05,552 - __main__ - INFO - Successfully classified record 5b908769-4feb-4441-83e9-c6b3604b6577 as: 休息/放松
+2025-07-14 21:52:05,554 - __main__ - INFO - Processing record c3a62052-c28e-4e3c-aaf7-54c6f60d0146: 开周会...
+2025-07-14 21:52:05,554 - openai_client - INFO - Sending classification request to OpenAI
+2025-07-14 21:52:06,172 - openai_client - INFO - OpenAI raw response: 工作
+2025-07-14 21:52:06,173 - openai_client - INFO - OpenAI classification result: 工作
+2025-07-14 21:52:06,174 - __main__ - INFO - Exact match found: 工作
+2025-07-14 21:52:06,174 - notion_client - INFO - Updating record c3a62052-c28e-4e3c-aaf7-54c6f60d0146 with classification: 工作
+2025-07-14 21:52:10,037 - notion_client - INFO - Successfully updated record c3a62052-c28e-4e3c-aaf7-54c6f60d0146
+2025-07-14 21:52:10,039 - __main__ - INFO - Successfully classified record c3a62052-c28e-4e3c-aaf7-54c6f60d0146 as: 工作
+2025-07-14 21:52:10,039 - __main__ - INFO - Classification complete: 20 records classified
+2025-07-14 21:52:10,039 - __main__ - INFO - Classification completed successfully
