@@ -88,11 +88,6 @@ class TimeRecordClassifier:
             date_str = date_obj.strftime('%Y-%m-%d')
             logger.info(f"Processing time records for date: {date_str}")
             
-            # Test OpenAI connection first
-            if not await self.openai_client.test_connection():
-                logger.error("OpenAI connection test failed")
-                return False
-            
             # Get classification options from database
             classification_options = await self.notion_client.get_classification_options()
             if not classification_options:
