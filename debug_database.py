@@ -5,25 +5,32 @@ Debug script to inspect Notion database schema
 
 import asyncio
 import json
-from config import Config
+import os
+from dotenv import load_dotenv
 from notion_client import NotionClient
+
+# Load environment variables
+load_dotenv()
 
 async def debug_database():
     """Debug the database structure"""
     print("Debugging Notion Database Schema")
     print("=" * 50)
     
-    config = Config.from_environment()
-    if not config.is_valid():
-        print("Invalid configuration")
+    # Get configuration from environment
+    notion_token = os.getenv('NOTION_TOKEN')
+    database_id = os.getenv('NOTION_DATABASE_ID')
+    
+    if not notion_token or not database_id:
+        print("Invalid configuration - missing NOTION_TOKEN or NOTION_DATABASE_ID")
         return
     
-    notion_client = NotionClient(config.notion_token, config.database_id)
+    notion_client = NotionClient(notion_token, database_id)
     
     try:
         # Get database schema
         import aiohttp
-        url = f"{notion_client.base_url}/databases/{config.database_id}"
+        url = f"{notion_client.base_url}/databases/{database_id}"
         
         async with aiohttp.ClientSession() as session:
             async with session.get(url, headers=notion_client.headers) as response:
@@ -50,7 +57,7 @@ async def debug_database():
                     
                     # Also try to get a few sample records
                     print("\nSample Records:")
-                    query_url = f"{notion_client.base_url}/databases/{config.database_id}/query"
+                    query_url = f"{notion_client.base_url}/databases/{database_id}/query"
                     query_data = {"page_size": 3}
                     
                     async with session.post(query_url, headers=notion_client.headers, json=query_data) as query_response:

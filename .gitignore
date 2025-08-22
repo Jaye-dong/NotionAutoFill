@@ -1,2 +1,4 @@
 
 notion_auto_fill.log
+__pycache__/
+.env

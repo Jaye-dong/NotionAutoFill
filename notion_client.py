@@ -31,13 +31,24 @@ class NotionClient:
         try:
             logger.info(f"Fetching time records for date: {target_date}")
             
-            # Build query filter for today's records using the correct property name
+            # Build query filter for the date range (handles timezone-aware dates)
+            # For date fields with time information, we need to query a date range
             filter_query = {
                 "filter": {
-                    "property": "时间段",
-                    "date": {
-                        "equals": target_date
-                    }
+                    "and": [
+                        {
+                            "property": "时间段",
+                            "date": {
+                                "on_or_after": f"{target_date}T00:00:00+08:00"
+                            }
+                        },
+                        {
+                            "property": "时间段",
+                            "date": {
+                                "on_or_before": f"{target_date}T23:59:59+08:00"
+                            }
+                        }
+                    ]
                 }
             }
             
