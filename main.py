@@ -40,6 +40,7 @@ class TimeRecordClassifier:
         # Notion configuration
         self.notion_token = os.getenv('NOTION_TOKEN')
         self.notion_database_id = os.getenv('NOTION_DATABASE_ID')
+        self.next_action_database_id = os.getenv('NEXT_ACTION_DATABASE_ID')
         
         # OpenAI configuration
         self.openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -55,7 +56,11 @@ class TimeRecordClassifier:
             raise ValueError("OPENAI_API_KEY environment variable is required")
         
         # Initialize clients
-        self.notion_client = NotionClient(self.notion_token, self.notion_database_id)
+        self.notion_client = NotionClient(
+            self.notion_token, 
+            self.notion_database_id,
+            self.next_action_database_id
+        )
         self.openai_client = OpenAIClient(
             api_key=self.openai_api_key,
             model=self.openai_model,
@@ -334,6 +339,308 @@ Time Type:"""
         
         return prompt
 
+    async def process_next_actions(self) -> bool:
+        """
+        Process and assess next action records with AI
+        
+        Returns:
+            True if processing was successful, False otherwise
+        """
+        try:
+            if not self.next_action_database_id:
+                logger.info("Next action database ID not configured, skipping next actions")
+                return True
+                
+            logger.info("Processing next action records for AI assessment")
+            
+            # Get field options from next action database
+            field_options = await self.notion_client.get_next_action_field_options()
+            logger.info(f"Available field options: {field_options}")
+            
+            # Get next action records from Notion
+            records = await self.notion_client.get_next_actions()
+            if not records:
+                logger.info("No next action records found that need AI assessment")
+                return True
+            
+            logger.info(f"Found {len(records)} next action records to assess")
+            
+            # Process each record
+            processed_count = 0
+            for record in records:
+                record_id = record.get('id')
+                properties = record.get('properties', {})
+                
+                # Get record content
+                task_name = self.get_next_action_content(record)
+                
+                if not task_name.strip():
+                    logger.warning(f"Next action {record_id} has no task name, skipping")
+                    continue
+                
+                logger.info(f"Processing next action {record_id}: {task_name[:100]}...")
+                
+                # Check which fields need to be filled
+                current_energy = self.extract_property_text(properties.get('能量消耗', {}))
+                current_estimates = self.extract_property_text(properties.get('Estimates', {}))
+                current_context = self.extract_property_text(properties.get('情景', {}))
+                
+                # Get AI assessment for missing fields
+                assessment = await self.assess_next_action(record, field_options)
+                
+                if not assessment:
+                    logger.warning(f"Failed to get AI assessment for next action {record_id}")
+                    continue
+                
+                # Prepare fields to update
+                energy_cost = assessment.get('energy_cost') if not current_energy else None
+                estimates = assessment.get('estimates') if not current_estimates else None
+                context = assessment.get('context') if not current_context else None
+                
+                # Update the record in Notion
+                success = await self.notion_client.update_next_action_fields(
+                    record_id, energy_cost, estimates, context
+                )
+                if success:
+                    processed_count += 1
+                    updates = []
+                    if energy_cost: updates.append(f"能量消耗: {energy_cost}")
+                    if estimates: updates.append(f"Estimates: {estimates}")
+                    if context: updates.append(f"情景: {context}")
+                    logger.info(f"Successfully updated next action {record_id} with: {', '.join(updates)}")
+                else:
+                    logger.error(f"Failed to update next action {record_id}")
+            
+            logger.info(f"Next action processing complete: {processed_count} records processed")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Error processing next actions: {str(e)}")
+            return False
+
+    async def assess_next_action(self, record: Dict[str, Any], field_options: Dict[str, List[str]]) -> Optional[Dict[str, str]]:
+        """
+        Assess a next action record using AI to determine energy cost, estimates, and context
+        
+        Args:
+            record: The next action record
+            field_options: Available options for select fields
+            
+        Returns:
+            Dict with energy_cost, estimates, context or None if failed
+        """
+        try:
+            # Build assessment prompt
+            prompt = self.build_next_action_assessment_prompt(record, field_options)
+            
+            # Get assessment from OpenAI
+            assessment_response = await self.openai_client.classify(prompt)
+            
+            if not assessment_response:
+                logger.warning(f"OpenAI returned empty assessment for next action")
+                return None
+            
+            # Parse the structured response
+            assessment = self.parse_assessment_response(assessment_response, field_options)
+            
+            return assessment
+            
+        except Exception as e:
+            logger.error(f"Error assessing next action: {str(e)}")
+            return None
+
+    def build_next_action_assessment_prompt(self, record: Dict[str, Any], field_options: Dict[str, List[str]]) -> str:
+        """
+        Build assessment prompt for next action AI analysis
+        
+        Args:
+            record: The next action record
+            field_options: Available options for select fields
+            
+        Returns:
+            Formatted prompt string
+        """
+        properties = record.get('properties', {})
+        
+        # Extract task name
+        task_name = self.get_next_action_content(record)
+        
+        # Extract any existing context
+        existing_energy = self.extract_property_text(properties.get('能量消耗', {}))
+        existing_estimates = self.extract_property_text(properties.get('Estimates', {}))
+        existing_context = self.extract_property_text(properties.get('情景', {}))
+        
+        # Build options strings
+        energy_options_str = ""
+        if '能量消耗' in field_options:
+            energy_options_str = ", ".join(field_options['能量消耗'])
+        
+        estimates_options_str = ""
+        if 'Estimates' in field_options:
+            estimates_options_str = ", ".join(field_options['Estimates'])
+        
+        context_options_str = ""
+        if '情景' in field_options:
+            context_options_str = ", ".join(field_options['情景'])
+        
+        prompt = f"""Please assess the following task and provide values for the requested fields.
+
+Task Name: {task_name}
+
+Current Values:
+- Energy Cost: {existing_energy if existing_energy else 'Not set'}
+- Time Estimate: {existing_estimates if existing_estimates else 'Not set'}
+- Context/Scenario: {existing_context if existing_context else 'Not set'}
+
+Please provide assessments for the fields that are "Not set":
+
+1. Energy Cost (choose from: {energy_options_str if energy_options_str else 'any appropriate level like Low, Medium, High'}):
+   Consider the mental/physical effort required
+
+2. Time Estimate (choose from: {estimates_options_str if estimates_options_str else 'any appropriate estimate like 15min, 30min, 1h, 2h'}):
+   Select the most appropriate time estimate
+
+3. Context/Scenario (choose from: {context_options_str if context_options_str else 'any appropriate context'}):
+   When/where is this task best performed?
+
+Please respond in this exact format:
+ENERGY_COST: [your assessment]
+ESTIMATES: [your assessment]
+CONTEXT: [your assessment]
+
+If a field already has a value, respond with "SKIP" for that field.
+
+Assessment:"""
+        
+        return prompt
+
+    def parse_assessment_response(self, response: str, field_options: Dict[str, List[str]]) -> Dict[str, str]:
+        """
+        Parse AI assessment response into structured data
+        
+        Args:
+            response: AI response string
+            field_options: Available options for validation
+            
+        Returns:
+            Dict with parsed assessments
+        """
+        assessment = {}
+        
+        try:
+            lines = response.strip().split('\n')
+            
+            for line in lines:
+                line = line.strip()
+                if ':' in line:
+                    key, value = line.split(':', 1)
+                    key = key.strip()
+                    value = value.strip()
+                    
+                    if key == 'ENERGY_COST' and value != 'SKIP':
+                        # Validate against available options
+                        if '能量消耗' in field_options:
+                            matched_option = self.find_best_match(value, field_options['能量消耗'])
+                            if matched_option:
+                                assessment['energy_cost'] = matched_option
+                        else:
+                            assessment['energy_cost'] = value
+                    
+                    elif key == 'ESTIMATES' and value != 'SKIP':
+                        # Validate against available options
+                        if 'Estimates' in field_options:
+                            matched_option = self.find_best_match(value, field_options['Estimates'])
+                            if matched_option:
+                                assessment['estimates'] = matched_option
+                        else:
+                            assessment['estimates'] = value
+                    
+                    elif key == 'CONTEXT' and value != 'SKIP':
+                        # Validate against available options
+                        if '情景' in field_options:
+                            matched_option = self.find_best_match(value, field_options['情景'])
+                            if matched_option:
+                                assessment['context'] = matched_option
+                        else:
+                            assessment['context'] = value
+            
+            logger.info(f"Parsed assessment: {assessment}")
+            return assessment
+            
+        except Exception as e:
+            logger.error(f"Error parsing assessment response: {e}")
+            return {}
+
+    def find_best_match(self, ai_value: str, options: List[str]) -> Optional[str]:
+        """Find the best matching option for an AI-provided value"""
+        if not ai_value or not options:
+            return None
+        
+        # Exact match
+        if ai_value in options:
+            return ai_value
+        
+        # Case-insensitive match
+        for option in options:
+            if ai_value.lower() == option.lower():
+                return option
+        
+        # Partial match
+        for option in options:
+            if ai_value.lower() in option.lower() or option.lower() in ai_value.lower():
+                return option
+        
+        logger.warning(f"No match found for '{ai_value}' in options: {options}")
+        return None
+
+    def get_next_action_content(self, record: Dict[str, Any]) -> str:
+        """Extract task name from a next action record"""
+        try:
+            properties = record.get('properties', {})
+            
+            # Try common field names for task name
+            for field_name in ['Task name', 'Task Name', 'Name', 'Title', '任务名称', '任务']:
+                if field_name in properties:
+                    return self.extract_property_text(properties[field_name])
+            
+            # If no specific task name field found, log the structure for debugging
+            logger.warning(f"No task name field found in next action record. Available properties: {list(properties.keys())}")
+            return ""
+            
+        except Exception as e:
+            logger.error(f"Error extracting next action content: {e}")
+            return ""
+
+    def extract_property_text(self, property_data: Dict[str, Any]) -> str:
+        """Extract text from various Notion property types"""
+        try:
+            prop_type = property_data.get('type')
+            
+            if prop_type == 'title':
+                title_array = property_data.get('title', [])
+                if title_array and len(title_array) > 0:
+                    return title_array[0].get('plain_text', '').strip()
+            
+            elif prop_type == 'rich_text':
+                rich_text_array = property_data.get('rich_text', [])
+                if rich_text_array and len(rich_text_array) > 0:
+                    return rich_text_array[0].get('plain_text', '').strip()
+            
+            elif prop_type == 'select':
+                select_data = property_data.get('select')
+                if select_data:
+                    return select_data.get('name', '').strip()
+            
+            elif prop_type == 'number':
+                number = property_data.get('number')
+                return str(number) if number is not None else ''
+            
+            return ""
+            
+        except Exception as e:
+            logger.error(f"Error extracting property text: {e}")
+            return ""
+
     def get_record_content(self, record):
         """Extract content from a Notion record"""
         try:
@@ -361,26 +668,48 @@ Time Type:"""
             logger.error(f"Error extracting record content: {e}")
             return ""
 
-    async def run(self, target_date: Optional[str] = None) -> bool:
+    async def run(self, target_date: Optional[str] = None, mode: str = "time") -> bool:
         """
         Main execution method
         
         Args:
-            target_date: Date to process (YYYY-MM-DD format)
+            target_date: Date to process (YYYY-MM-DD format) - only for time records
+            mode: Processing mode - "time", "next_actions", or "both"
             
         Returns:
             True if successful, False otherwise
         """
         try:
-            logger.info("Starting Notion Time Record Auto-Classification")
+            logger.info(f"Starting Notion Auto-Classification Tool - Mode: {mode}")
+            
+            success = True
             
             # Process time records
-            success = await self.process_time_records(target_date)
+            if mode in ["time", "both"]:
+                logger.info("Processing time records...")
+                time_success = await self.process_time_records(target_date)
+                success = success and time_success
+                
+                if time_success:
+                    logger.info("Time record classification completed successfully")
+                else:
+                    logger.error("Time record classification failed")
+            
+            # Process next actions
+            if mode in ["next_actions", "both"]:
+                logger.info("Processing next actions...")
+                next_actions_success = await self.process_next_actions()
+                success = success and next_actions_success
+                
+                if next_actions_success:
+                    logger.info("Next action classification completed successfully")
+                else:
+                    logger.error("Next action classification failed")
             
             if success:
-                logger.info("Classification completed successfully")
+                logger.info("All classification tasks completed successfully")
             else:
-                logger.error("Classification failed")
+                logger.error("Some classification tasks failed")
             
             return success
             
@@ -391,18 +720,25 @@ Time Type:"""
 
 async def main():
     """Main entry point"""
-    parser = argparse.ArgumentParser(description="Notion Time Record Auto-Classification Tool")
+    parser = argparse.ArgumentParser(description="Notion Auto-Classification Tool")
     parser.add_argument(
         '--date',
         type=str,
-        help='Target date to process (YYYY-MM-DD format). Defaults to today.'
+        help='Target date to process (YYYY-MM-DD format). Only applies to time records. Defaults to today.'
+    )
+    parser.add_argument(
+        '--mode',
+        type=str,
+        choices=['time', 'next_actions', 'both'],
+        default='time',
+        help='Processing mode: "time" for time records, "next_actions" for next actions, "both" for both databases. Defaults to "time".'
     )
     
     args = parser.parse_args()
     
     try:
         classifier = TimeRecordClassifier()
-        success = await classifier.run(args.date)
+        success = await classifier.run(args.date, args.mode)
         sys.exit(0 if success else 1)
         
     except Exception as e:

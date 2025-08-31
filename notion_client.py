@@ -14,10 +14,11 @@ logger = logging.getLogger(__name__)
 class NotionClient:
     """Client for interacting with Notion API"""
     
-    def __init__(self, token: str, database_id: str):
+    def __init__(self, token: str, database_id: str, next_action_database_id: str = None):
         """Initialize Notion client"""
         self.token = token
         self.database_id = database_id
+        self.next_action_database_id = next_action_database_id
         self.base_url = "https://api.notion.com/v1"
         self.headers = {
             "Authorization": f"Bearer {token}",
@@ -225,3 +226,166 @@ class NotionClient:
         except Exception as e:
             logger.error(f"Error creating record: {str(e)}")
             return None
+    
+    async def get_next_actions(self) -> List[Dict[str, Any]]:
+        """Fetch all next action records that need AI assessment"""
+        try:
+            if not self.next_action_database_id:
+                logger.warning("Next action database ID not configured")
+                return []
+                
+            logger.info("Fetching next action records that need AI assessment")
+            
+            # Query records where Status is "To Do" AND any of the AI fields are empty
+            filter_query = {
+                "filter": {
+                    "and": [
+                        {
+                            "property": "Status",
+                            "status": {
+                                "equals": "To Do"
+                            }
+                        },
+                        {
+                            "or": [
+                                {
+                                    "property": "能量消耗",
+                                    "select": {
+                                        "is_empty": True
+                                    }
+                                },
+                                {
+                                    "property": "Estimates",
+                                    "select": {
+                                        "is_empty": True
+                                    }
+                                },
+                                {
+                                    "property": "情景",
+                                    "select": {
+                                        "is_empty": True
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+            
+            # Make API request
+            url = f"{self.base_url}/databases/{self.next_action_database_id}/query"
+            
+            async with aiohttp.ClientSession() as session:
+                async with session.post(url, headers=self.headers, json=filter_query) as response:
+                    if response.status == 200:
+                        data = await response.json()
+                        pages = data.get('results', [])
+                        
+                        logger.info(f"Successfully fetched {len(pages)} next action records")
+                        return pages
+                    else:
+                        error_text = await response.text()
+                        logger.error(f"Failed to fetch next actions: {response.status} - {error_text}")
+                        return []
+                        
+        except Exception as e:
+            logger.error(f"Error fetching next actions: {str(e)}")
+            return []
+    
+    async def get_next_action_field_options(self) -> Dict[str, List[str]]:
+        """Get available options for energy cost and context fields from the database schema"""
+        try:
+            if not self.next_action_database_id:
+                logger.warning("Next action database ID not configured")
+                return {}
+                
+            logger.info("Fetching next action field options from database schema")
+            
+            url = f"{self.base_url}/databases/{self.next_action_database_id}"
+            
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url, headers=self.headers) as response:
+                    if response.status == 200:
+                        data = await response.json()
+                        properties = data.get('properties', {})
+                        
+                        field_options = {}
+                        
+                        # Get options from 能量消耗 field
+                        energy_prop = properties.get('能量消耗')
+                        if energy_prop and energy_prop.get('type') == 'select':
+                            options = energy_prop.get('select', {}).get('options', [])
+                            option_names = [option.get('name', '') for option in options if option.get('name')]
+                            field_options['能量消耗'] = option_names
+                            logger.info(f"Found {len(option_names)} energy cost options: {option_names}")
+                        
+                        # Get options from Estimates field
+                        estimates_prop = properties.get('Estimates')
+                        if estimates_prop and estimates_prop.get('type') == 'select':
+                            options = estimates_prop.get('select', {}).get('options', [])
+                            option_names = [option.get('name', '') for option in options if option.get('name')]
+                            field_options['Estimates'] = option_names
+                            logger.info(f"Found {len(option_names)} estimates options: {option_names}")
+                        
+                        # Get options from 情景 field
+                        context_prop = properties.get('情景')
+                        if context_prop and context_prop.get('type') == 'select':
+                            options = context_prop.get('select', {}).get('options', [])
+                            option_names = [option.get('name', '') for option in options if option.get('name')]
+                            field_options['情景'] = option_names
+                            logger.info(f"Found {len(option_names)} context options: {option_names}")
+                        
+                        return field_options
+                    else:
+                        error_text = await response.text()
+                        logger.error(f"Failed to get next action database schema: {response.status} - {error_text}")
+                        return {}
+                        
+        except Exception as e:
+            logger.error(f"Error fetching next action field options: {str(e)}")
+            return {}
+    
+    async def update_next_action_fields(self, record_id: str, energy_cost: str = None, 
+                                      estimates: str = None, context: str = None) -> bool:
+        """Update the AI-assessed fields of a next action record"""
+        try:
+            logger.info(f"Updating next action {record_id} with AI assessments")
+            
+            # Build update data for the fields that need updating
+            update_data = {"properties": {}}
+            
+            if energy_cost:
+                update_data["properties"]["能量消耗"] = {
+                    "select": {"name": energy_cost}
+                }
+            
+            if estimates:
+                update_data["properties"]["Estimates"] = {
+                    "select": {"name": estimates}
+                }
+            
+            if context:
+                update_data["properties"]["情景"] = {
+                    "select": {"name": context}
+                }
+            
+            if not update_data["properties"]:
+                logger.warning(f"No fields to update for next action {record_id}")
+                return True
+            
+            url = f"{self.base_url}/pages/{record_id}"
+            
+            async with aiohttp.ClientSession() as session:
+                async with session.patch(url, headers=self.headers, json=update_data) as response:
+                    if response.status == 200:
+                        fields_updated = list(update_data["properties"].keys())
+                        logger.info(f"Successfully updated next action {record_id} fields: {fields_updated}")
+                        return True
+                    else:
+                        error_text = await response.text()
+                        logger.error(f"Failed to update next action {record_id}: {response.status} - {error_text}")
+                        return False
+                        
+        except Exception as e:
+            logger.error(f"Error updating next action {record_id}: {str(e)}")
+            return False
