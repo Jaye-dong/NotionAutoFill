@@ -71,27 +71,27 @@ class TimeRecordClassifier:
 
     async def process_time_records(self, target_date: Optional[str] = None) -> bool:
         """
-        Process and classify time records for a specific date
+        Process and classify time records
         
         Args:
-            target_date: Date to process (YYYY-MM-DD format), defaults to today
+            target_date: Date to process (YYYY-MM-DD format), if None processes all unclassified records
             
         Returns:
             True if processing was successful, False otherwise
         """
         try:
-            # Parse target date
+            # Parse target date if provided
+            date_str = None
             if target_date:
                 try:
                     date_obj = datetime.strptime(target_date, '%Y-%m-%d')
+                    date_str = date_obj.strftime('%Y-%m-%d')
+                    logger.info(f"Processing unclassified time records for date: {date_str}")
                 except ValueError:
                     logger.error(f"Invalid date format: {target_date}. Use YYYY-MM-DD")
                     return False
             else:
-                date_obj = datetime.now()
-            
-            date_str = date_obj.strftime('%Y-%m-%d')
-            logger.info(f"Processing time records for date: {date_str}")
+                logger.info("Processing all unclassified time records")
             
             # Get classification options from database
             classification_options = await self.notion_client.get_classification_options()
@@ -108,13 +108,19 @@ class TimeRecordClassifier:
             
             logger.info(f"Available time type options: {time_type_options}")
             
-            # Get today's records from Notion
+            # Get records from Notion
             records = await self.notion_client.get_time_records(date_str)
             if not records:
-                logger.info(f"No time records found for {date_str}")
+                if date_str:
+                    logger.info(f"No unclassified time records found for {date_str}")
+                else:
+                    logger.info("No unclassified time records found")
                 return True
             
-            logger.info(f"Found {len(records)} time records for {date_str}")
+            if date_str:
+                logger.info(f"Found {len(records)} unclassified time records for {date_str}")
+            else:
+                logger.info(f"Found {len(records)} unclassified time records")
             
             # Process each record
             classified_count = 0
@@ -724,7 +730,7 @@ async def main():
     parser.add_argument(
         '--date',
         type=str,
-        help='Target date to process (YYYY-MM-DD format). Only applies to time records. Defaults to today.'
+        help='Target date to process (YYYY-MM-DD format). Only applies to time records. If not specified, processes all unclassified time records.'
     )
     parser.add_argument(
         '--mode',

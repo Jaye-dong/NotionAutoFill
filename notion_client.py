@@ -27,46 +27,67 @@ class NotionClient:
         }
         logger.info("Notion client initialized")
     
-    async def get_time_records(self, target_date: str) -> List[Dict[str, Any]]:
-        """Fetch time records for the specified date"""
+    async def get_time_records(self, target_date: str = None) -> List[Dict[str, Any]]:
+        """Fetch time records - either for a specific date or all unclassified records"""
         try:
-            logger.info(f"Fetching time records for date: {target_date}")
-            
-            # Build query filter for the date range AND unclassified records
-            filter_query = {
-                "filter": {
-                    "and": [
-                        {
-                            "property": "时间段",
-                            "date": {
-                                "on_or_after": f"{target_date}T00:00:00+08:00"
-                            }
-                        },
-                        {
-                            "property": "时间段",
-                            "date": {
-                                "on_or_before": f"{target_date}T23:59:59+08:00"
-                            }
-                        },
-                        {
-                            "or": [
-                                {
-                                    "property": "分类",
-                                    "select": {
-                                        "is_empty": True
-                                    }
-                                },
-                                {
-                                    "property": "时间类型",
-                                    "select": {
-                                        "is_empty": True
-                                    }
+            if target_date:
+                logger.info(f"Fetching unclassified time records for date: {target_date}")
+                # Build query filter for the date range AND unclassified records
+                filter_query = {
+                    "filter": {
+                        "and": [
+                            {
+                                "property": "时间段",
+                                "date": {
+                                    "on_or_after": f"{target_date}T00:00:00+08:00"
                                 }
-                            ]
-                        }
-                    ]
+                            },
+                            {
+                                "property": "时间段",
+                                "date": {
+                                    "on_or_before": f"{target_date}T23:59:59+08:00"
+                                }
+                            },
+                            {
+                                "or": [
+                                    {
+                                        "property": "分类",
+                                        "select": {
+                                            "is_empty": True
+                                        }
+                                    },
+                                    {
+                                        "property": "时间类型",
+                                        "select": {
+                                            "is_empty": True
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
                 }
-            }
+            else:
+                logger.info("Fetching all unclassified time records")
+                # Build query filter for unclassified records only
+                filter_query = {
+                    "filter": {
+                        "or": [
+                            {
+                                "property": "分类",
+                                "select": {
+                                    "is_empty": True
+                                }
+                            },
+                            {
+                                "property": "时间类型",
+                                "select": {
+                                    "is_empty": True
+                                }
+                            }
+                        ]
+                    }
+                }
             
             # Make API request
             url = f"{self.base_url}/databases/{self.database_id}/query"
