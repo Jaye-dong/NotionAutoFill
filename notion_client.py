@@ -32,8 +32,7 @@ class NotionClient:
         try:
             logger.info(f"Fetching time records for date: {target_date}")
             
-            # Build query filter for the date range (handles timezone-aware dates)
-            # For date fields with time information, we need to query a date range
+            # Build query filter for the date range AND unclassified records
             filter_query = {
                 "filter": {
                     "and": [
@@ -48,6 +47,22 @@ class NotionClient:
                             "date": {
                                 "on_or_before": f"{target_date}T23:59:59+08:00"
                             }
+                        },
+                        {
+                            "or": [
+                                {
+                                    "property": "分类",
+                                    "select": {
+                                        "is_empty": True
+                                    }
+                                },
+                                {
+                                    "property": "时间类型",
+                                    "select": {
+                                        "is_empty": True
+                                    }
+                                }
+                            ]
                         }
                     ]
                 }
