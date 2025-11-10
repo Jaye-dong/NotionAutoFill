@@ -285,7 +285,7 @@ class NotionClient:
                         {
                             "or": [
                                 {
-                                    "property": "能量消耗",
+                                    "property": "精力消耗",
                                     "select": {
                                         "is_empty": True
                                     }
@@ -347,12 +347,12 @@ class NotionClient:
                         
                         field_options = {}
                         
-                        # Get options from 能量消耗 field
-                        energy_prop = properties.get('能量消耗')
+                        # Get options from 精力消耗 field
+                        energy_prop = properties.get('精力消耗')
                         if energy_prop and energy_prop.get('type') == 'select':
                             options = energy_prop.get('select', {}).get('options', [])
                             option_names = [option.get('name', '') for option in options if option.get('name')]
-                            field_options['能量消耗'] = option_names
+                            field_options['精力消耗'] = option_names
                             logger.info(f"Found {len(option_names)} energy cost options: {option_names}")
                         
                         # Get options from Estimates field
@@ -391,7 +391,7 @@ class NotionClient:
             update_data = {"properties": {}}
             
             if energy_cost:
-                update_data["properties"]["能量消耗"] = {
+                update_data["properties"]["精力消耗"] = {
                     "select": {"name": energy_cost}
                 }
             

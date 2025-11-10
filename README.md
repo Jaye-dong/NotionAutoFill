@@ -92,7 +92,7 @@ Your time tracking database should have these properties:
 Your next action database should have these properties:
 - `Task name` or `Task Name` (Title): The name/description of the task
 - `Status` (Status): Task status with "To Do" option - **Only tasks with status "To Do" will be processed**
-- `能量消耗` (Select): Energy cost or complexity level - **AI will fill this**
+- `精力消耗` (Select): Energy cost or complexity level - **AI will fill this**
 - `Estimates` (Select): Time estimate for the task - **AI will fill this**
 - `情景` (Select): Context or scenario where the task should be done - **AI will fill this**
 
@@ -252,7 +252,7 @@ Log levels include:
    - Check that your integration has access to the database
 
 2. **"No field options found"** (for next actions)
-   - Ensure your next action database has "能量消耗", "Estimates", and "情景" select fields with predefined options
+   - Ensure your next action database has "精力消耗", "Estimates", and "情景" select fields with predefined options
    - All three fields should be Select type (not Rich Text)
    - Check that your integration has access to the database
 
