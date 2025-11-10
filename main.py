@@ -387,7 +387,7 @@ Time Type:"""
                 logger.info(f"Processing next action {record_id}: {task_name[:100]}...")
                 
                 # Check which fields need to be filled
-                current_energy = self.extract_property_text(properties.get('能量消耗', {}))
+                current_energy = self.extract_property_text(properties.get('精力消耗', {}))
                 current_estimates = self.extract_property_text(properties.get('Estimates', {}))
                 current_context = self.extract_property_text(properties.get('情景', {}))
                 
@@ -410,7 +410,7 @@ Time Type:"""
                 if success:
                     processed_count += 1
                     updates = []
-                    if energy_cost: updates.append(f"能量消耗: {energy_cost}")
+                    if energy_cost: updates.append(f"精力消耗: {energy_cost}")
                     if estimates: updates.append(f"Estimates: {estimates}")
                     if context: updates.append(f"情景: {context}")
                     logger.info(f"Successfully updated next action {record_id} with: {', '.join(updates)}")
@@ -472,14 +472,14 @@ Time Type:"""
         task_name = self.get_next_action_content(record)
         
         # Extract any existing context
-        existing_energy = self.extract_property_text(properties.get('能量消耗', {}))
+        existing_energy = self.extract_property_text(properties.get('精力消耗', {}))
         existing_estimates = self.extract_property_text(properties.get('Estimates', {}))
         existing_context = self.extract_property_text(properties.get('情景', {}))
         
         # Build options strings
         energy_options_str = ""
-        if '能量消耗' in field_options:
-            energy_options_str = ", ".join(field_options['能量消耗'])
+        if '精力消耗' in field_options:
+            energy_options_str = ", ".join(field_options['精力消耗'])
         
         estimates_options_str = ""
         if 'Estimates' in field_options:
@@ -545,8 +545,8 @@ Assessment:"""
                     
                     if key == 'ENERGY_COST' and value != 'SKIP':
                         # Validate against available options
-                        if '能量消耗' in field_options:
-                            matched_option = self.find_best_match(value, field_options['能量消耗'])
+                        if '精力消耗' in field_options:
+                            matched_option = self.find_best_match(value, field_options['精力消耗'])
                             if matched_option:
                                 assessment['energy_cost'] = matched_option
                         else:
