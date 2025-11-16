@@ -287,46 +287,76 @@ class TimeRecordClassifier:
     def build_classification_prompt(self, content: str, classification_options: List[str]) -> str:
         """
         Build classification prompt for AI
-        
+
         Args:
             content: The content to classify
             classification_options: Available classification options
-            
+
         Returns:
             Formatted prompt string
         """
-        options_str = "\n".join([f"- {option}" for option in classification_options])
-        
-        prompt = f"""Please classify the following time tracking record into one of the exact categories listed below.
+        options_str = "\n".join([f"{i+1}. {option}" for i, option in enumerate(classification_options)])
 
-Time Record: {content}
+        prompt = f"""你是一个时间分类助手,需要将用户的活动分类到以下8个类别:
 
-Available Categories:
+1. 深度工作:需要专注思考的工作(写代码、调试复杂bug、技术方案设计)
+2. 浅层工作:必要但不需要深度思考(会议、邮件、打包编译、写文档)
+3. 被动工作:被打断、被迫做的工作(传包、救火、客户突发问题)
+4. 主动学习:有目的的学习(看书、看课程、刷题)
+5. 假装学习:看似在学但没投入(打开书但走神、报了课但没学)
+6. 生活必需:日常必需活动(通勤、做饭、吃饭、洗澡、家务)
+7. 恢复休息:真正恢复精力(睡觉、运动、高质量社交、高质量陪伴)
+8. 无效拖延:既没产出也没恢复(刷手机、看视频、发呆、逃避任务)
+
+【关键判断规则】:
+
+## 工作类的区分:
+- "写代码、调试、技术攻坚" → 深度工作
+- "开会、写日报、处理编译" → 浅层工作
+- "被打断、传包、救火" → 被动工作
+- 用户明确说"摸鱼"、"拖延" → 无效拖延
+
+## 学习类的区分:
+- 用户说"认真看"、"做笔记"、"有收获" → 主动学习
+- 用户说"走神"、"没看进去"、"打开但没学" → 假装学习
+- "看技术文章"但在工作时间 → 可能是无效拖延(需要用户澄清)
+
+## 休息类的区分:
+- "睡觉"、"运动"、"和朋友吃饭" → 恢复休息
+- "刷手机"、"看视频" → 默认为无效拖延
+- 除非用户明确说"看了高质量电影"、"玩游戏很投入" → 才是恢复休息
+
+## 生活必需的识别:
+- "通勤"、"做饭"、"吃饭"、"洗澡"、"买菜"、"家务" → 生活必需
+
+## 特殊情况:
+- 如果用户说"该做X但在做Y" → Y是无效拖延
+- 如果用户说"陪伴"但没说质量 → 默认恢复休息
+
+用户记录: {content}
+
+数据库中可用的分类选项:
 {options_str}
 
-Instructions:
-1. Analyze the content of the time record
-2. Choose the most appropriate category from the list above
-3. Respond with ONLY the exact category name, nothing else
-4. If none of the categories fit perfectly, choose the closest one
+请根据上述规则,从数据库中可用的选项里选择最匹配的一个类别。只需要回复精确的类别名称,不要有任何其他内容。
 
-Classification:"""
-        
+分类:"""
+
         return prompt
 
     def build_time_type_prompt(self, content: str, time_type_options: List[str]) -> str:
         """
         Build time type determination prompt for AI
-        
+
         Args:
             content: The content to determine time type for
             time_type_options: Available time type options
-            
+
         Returns:
             Formatted prompt string
         """
         options_str = "\n".join([f"- {option}" for option in time_type_options])
-        
+
         prompt = f"""Please determine the time type of the following time tracking record. Choose from one of the exact time types listed below.
 
 Time Record: {content}
@@ -342,7 +372,7 @@ Instructions:
 5. If none of the time types fit perfectly, choose the closest one
 
 Time Type:"""
-        
+
         return prompt
 
     async def process_next_actions(self) -> bool:
