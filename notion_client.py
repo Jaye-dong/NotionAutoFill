@@ -49,20 +49,10 @@ class NotionClient:
                                 }
                             },
                             {
-                                "or": [
-                                    {
-                                        "property": "分类",
-                                        "select": {
-                                            "is_empty": True
-                                        }
-                                    },
-                                    {
-                                        "property": "时间类型",
-                                        "select": {
-                                            "is_empty": True
-                                        }
-                                    }
-                                ]
+                                "property": "分类",
+                                "select": {
+                                    "is_empty": True
+                                }
                             }
                         ]
                     }
@@ -72,53 +62,43 @@ class NotionClient:
                 # Build query filter for unclassified records only
                 filter_query = {
                     "filter": {
-                        "or": [
-                            {
-                                "property": "分类",
-                                "select": {
-                                    "is_empty": True
-                                }
-                            },
-                            {
-                                "property": "时间类型",
-                                "select": {
-                                    "is_empty": True
-                                }
-                            }
-                        ]
+                        "property": "分类",
+                        "select": {
+                            "is_empty": True
+                        }
                     }
                 }
-            
+
             # Make API request
             url = f"{self.base_url}/databases/{self.database_id}/query"
-            
+
             async with aiohttp.ClientSession() as session:
                 async with session.post(url, headers=self.headers, json=filter_query) as response:
                     if response.status == 200:
                         data = await response.json()
                         pages = data.get('results', [])
-                        
+
                         logger.info(f"Successfully fetched {len(pages)} time records")
                         return pages
                     else:
                         error_text = await response.text()
                         logger.error(f"Failed to fetch records: {response.status} - {error_text}")
                         return []
-                        
+
         except Exception as e:
             logger.error(f"Error fetching time records: {str(e)}")
             return []
     
-    async def update_record_classification_and_type(self, record_id: str, classification: str, time_type: str) -> bool:
-        """Update the classification and time type of a time record"""
+    async def update_record_classification(self, record_id: str, classification: str) -> bool:
+        """Update the classification of a time record"""
         try:
-            logger.info(f"Updating record {record_id} with classification: {classification} and time type: {time_type}")
-            
-            # Build update data for both classification and time type
+            logger.info(f"Updating record {record_id} with classification: {classification}")
+
+            # Build update data for classification
             update_data = {
                 "properties": {}
             }
-            
+
             # Add classification if provided
             if classification:
                 update_data["properties"]["分类"] = {
@@ -126,17 +106,12 @@ class NotionClient:
                         "name": classification
                     }
                 }
-            
-            # Add time type if provided
-            if time_type:
-                update_data["properties"]["时间类型"] = {
-                    "select": {
-                        "name": time_type
-                    }
-                }
-            
+            else:
+                logger.warning(f"No classification provided for record {record_id}")
+                return False
+
             url = f"{self.base_url}/pages/{record_id}"
-            
+
             async with aiohttp.ClientSession() as session:
                 async with session.patch(url, headers=self.headers, json=update_data) as response:
                     if response.status == 200:
@@ -146,7 +121,7 @@ class NotionClient:
                         error_text = await response.text()
                         logger.error(f"Failed to update record {record_id}: {response.status} - {error_text}")
                         return False
-                        
+
         except Exception as e:
             logger.error(f"Error updating record {record_id}: {str(e)}")
             return False
@@ -172,24 +147,26 @@ class NotionClient:
             return False
     
     async def get_classification_options(self) -> List[str]:
-        """Get available classification options from the database schema"""
+        """Get available classification options from the database schema (excluding '未分类')"""
         try:
             logger.info("Fetching classification options from database schema")
-            
+
             url = f"{self.base_url}/databases/{self.database_id}"
-            
+
             async with aiohttp.ClientSession() as session:
                 async with session.get(url, headers=self.headers) as response:
                     if response.status == 200:
                         data = await response.json()
                         properties = data.get('properties', {})
-                        
+
                         # Get options from 分类 field
                         classification_prop = properties.get('分类')
                         if classification_prop and classification_prop.get('type') == 'select':
                             options = classification_prop.get('select', {}).get('options', [])
-                            option_names = [option.get('name', '') for option in options if option.get('name')]
-                            logger.info(f"Found {len(option_names)} classification options: {option_names}")
+                            # Filter out "未分类" option
+                            option_names = [option.get('name', '') for option in options
+                                          if option.get('name') and option.get('name') != '未分类']
+                            logger.info(f"Found {len(option_names)} classification options (excluding '未分类'): {option_names}")
                             return option_names
                         else:
                             logger.warning("分类 field not found or not a select field")
@@ -198,43 +175,10 @@ class NotionClient:
                         error_text = await response.text()
                         logger.error(f"Failed to get database schema: {response.status} - {error_text}")
                         return []
-                        
+
         except Exception as e:
             logger.error(f"Error fetching classification options: {str(e)}")
             return []
-    
-    async def get_time_type_options(self) -> List[str]:
-        """Get available time type options from the database schema"""
-        try:
-            logger.info("Fetching time type options from database schema")
-            
-            url = f"{self.base_url}/databases/{self.database_id}"
-            
-            async with aiohttp.ClientSession() as session:
-                async with session.get(url, headers=self.headers) as response:
-                    if response.status == 200:
-                        data = await response.json()
-                        properties = data.get('properties', {})
-                        
-                        # Get options from 时间类型 field
-                        time_type_prop = properties.get('时间类型')
-                        if time_type_prop and time_type_prop.get('type') == 'select':
-                            options = time_type_prop.get('select', {}).get('options', [])
-                            option_names = [option.get('name', '') for option in options if option.get('name')]
-                            logger.info(f"Found {len(option_names)} time type options: {option_names}")
-                            return option_names
-                        else:
-                            logger.warning("时间类型 field not found or not a select field")
-                            return []
-                    else:
-                        error_text = await response.text()
-                        logger.error(f"Failed to get database schema: {response.status} - {error_text}")
-                        return []
-                        
-        except Exception as e:
-            logger.error(f"Error fetching time type options: {str(e)}")
-            return []
-    
     async def create_record(self, properties: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """Create a new record in the database"""
         try:

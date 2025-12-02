@@ -98,16 +98,9 @@ class TimeRecordClassifier:
             if not classification_options:
                 logger.error("No classification options found in database")
                 return False
-            
+
             logger.info(f"Available classification options: {classification_options}")
-            
-            # Get time type options from database
-            time_type_options = await self.notion_client.get_time_type_options()
-            if not time_type_options:
-                logger.warning("No time type options found in database")
-            
-            logger.info(f"Available time type options: {time_type_options}")
-            
+
             # Get records from Notion
             records = await self.notion_client.get_time_records(date_str)
             if not records:
@@ -116,70 +109,53 @@ class TimeRecordClassifier:
                 else:
                     logger.info("No unclassified time records found")
                 return True
-            
+
             if date_str:
                 logger.info(f"Found {len(records)} unclassified time records for {date_str}")
             else:
                 logger.info(f"Found {len(records)} unclassified time records")
-            
+
             # Process each record
             classified_count = 0
             for record in records:
                 record_id = record.get('id')
                 properties = record.get('properties', {})
-                
+
                 # Get current classification
                 classification_prop = properties.get('分类', {})
                 current_classification = None
                 if classification_prop.get('type') == 'select' and classification_prop.get('select'):
                     current_classification = classification_prop['select']['name']
-                
-                # Get current time type
-                time_type_prop = properties.get('时间类型', {})
-                current_time_type = None
-                if time_type_prop.get('type') == 'select' and time_type_prop.get('select'):
-                    current_time_type = time_type_prop['select']['name']
-                
-                # Skip if already classified and typed
-                if current_classification and current_time_type:
-                    logger.info(f"Record {record_id} already classified as: {current_classification} and typed as: {current_time_type}")
+
+                # Skip if already classified
+                if current_classification:
+                    logger.info(f"Record {record_id} already classified as: {current_classification}")
                     continue
-                
+
                 # Get record content for classification
                 content_text = self.get_record_content(record)
-                
+
                 if not content_text.strip():
                     logger.warning(f"Record {record_id} has no content, skipping")
                     continue
-                
+
                 logger.info(f"Processing record {record_id}: {content_text[:100]}...")
-                
-                # Classify the record if not already classified
-                classification = current_classification
+
+                # Classify the record
+                classification = await self.classify_time_record(content_text, classification_options)
+
                 if not classification:
-                    classification = await self.classify_time_record(content_text, classification_options)
-                
-                # Determine time type if not already set
-                time_type = current_time_type
-                if not time_type and time_type_options:
-                    time_type = await self.determine_time_type(content_text, time_type_options)
-                
+                    logger.warning(f"Failed to classify record {record_id}")
+                    continue
+
                 # Update the record in Notion
-                success = await self.notion_client.update_record_classification_and_type(
-                    record_id, 
-                    classification if classification else "", 
-                    time_type if time_type else ""
+                success = await self.notion_client.update_record_classification(
+                    record_id,
+                    classification
                 )
                 if success:
                     classified_count += 1
-                    if classification and time_type:
-                        logger.info(f"Successfully classified record {record_id} as: {classification}, type: {time_type}")
-                    elif classification:
-                        logger.info(f"Successfully classified record {record_id} as: {classification}")
-                    elif time_type:
-                        logger.info(f"Successfully typed record {record_id} as: {time_type}")
-                    else:
-                        logger.info(f"Processed record {record_id} but no classification or type assigned")
+                    logger.info(f"Successfully classified record {record_id} as: {classification}")
                 else:
                     logger.error(f"Failed to update record {record_id}")
             
@@ -235,53 +211,6 @@ class TimeRecordClassifier:
             
         except Exception as e:
             logger.error(f"Error classifying record: {str(e)}")
-            return None
-
-    async def determine_time_type(self, content: str, time_type_options: List[str]) -> Optional[str]:
-        """
-        Determine time type for a time record using OpenAI
-        
-        Args:
-            content: The content of the time record
-            time_type_options: Available time type options
-            
-        Returns:
-            Time type result or None if failed
-        """
-        try:
-            # Build time type determination prompt
-            prompt = self.build_time_type_prompt(content, time_type_options)
-            
-            # Get time type from OpenAI
-            time_type = await self.openai_client.classify(prompt)
-            
-            if not time_type:
-                logger.warning(f"OpenAI returned empty time type for: {content[:50]}...")
-                return None
-            
-            # Validate time type against options
-            # First try exact match
-            if time_type in time_type_options:
-                logger.info(f"Exact time type match found: {time_type}")
-                return time_type
-            
-            # Try case-insensitive match
-            for option in time_type_options:
-                if time_type.lower() == option.lower():
-                    logger.info(f"Case-insensitive time type match found: {option}")
-                    return option
-            
-            # Try partial match
-            for option in time_type_options:
-                if time_type.lower() in option.lower() or option.lower() in time_type.lower():
-                    logger.info(f"Partial time type match found: {option}")
-                    return option
-            
-            logger.warning(f"No matching time type found for '{time_type}' in options: {time_type_options}")
-            return None
-            
-        except Exception as e:
-            logger.error(f"Error determining time type: {str(e)}")
             return None
 
     def build_classification_prompt(self, content: str, classification_options: List[str]) -> str:
@@ -341,37 +270,6 @@ class TimeRecordClassifier:
 请根据上述规则,从数据库中可用的选项里选择最匹配的一个类别。只需要回复精确的类别名称,不要有任何其他内容。
 
 分类:"""
-
-        return prompt
-
-    def build_time_type_prompt(self, content: str, time_type_options: List[str]) -> str:
-        """
-        Build time type determination prompt for AI
-
-        Args:
-            content: The content to determine time type for
-            time_type_options: Available time type options
-
-        Returns:
-            Formatted prompt string
-        """
-        options_str = "\n".join([f"- {option}" for option in time_type_options])
-
-        prompt = f"""Please determine the time type of the following time tracking record. Choose from one of the exact time types listed below.
-
-Time Record: {content}
-
-Available Time Types:
-{options_str}
-
-Instructions:
-1. Analyze the content of the time record
-2. Determine what type of work this represents
-3. Choose the most appropriate time type from the list above
-4. Respond with ONLY the exact time type name, nothing else
-5. If none of the time types fit perfectly, choose the closest one
-
-Time Type:"""
 
         return prompt
 
