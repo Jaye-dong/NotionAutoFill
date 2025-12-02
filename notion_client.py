@@ -147,7 +147,7 @@ class NotionClient:
             return False
     
     async def get_classification_options(self) -> List[str]:
-        """Get available classification options from the database schema (excluding '未分类' and '未记录')"""
+        """Get available classification options from the database schema (excluding '未记录')"""
         try:
             logger.info("Fetching classification options from database schema")
 
@@ -163,10 +163,10 @@ class NotionClient:
                         classification_prop = properties.get('分类')
                         if classification_prop and classification_prop.get('type') == 'select':
                             options = classification_prop.get('select', {}).get('options', [])
-                            # Filter out "未分类" and "未记录" options
+                            # Filter out "未记录" option
                             option_names = [option.get('name', '') for option in options
-                                          if option.get('name') and option.get('name') not in ['未分类', '未记录']]
-                            logger.info(f"Found {len(option_names)} classification options (excluding '未分类' and '未记录'): {option_names}")
+                                          if option.get('name') and option.get('name') != '未记录']
+                            logger.info(f"Found {len(option_names)} classification options (excluding '未记录'): {option_names}")
                             return option_names
                         else:
                             logger.warning("分类 field not found or not a select field")
