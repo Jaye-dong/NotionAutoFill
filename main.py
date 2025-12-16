@@ -273,10 +273,91 @@ class TimeRecordClassifier:
 
         return prompt
 
+    async def process_unlinked_records(self) -> bool:
+        """
+        Process records that need to be linked to their daily '未记录' entry.
+
+        Links records where:
+        - 分类 is not '未记录'
+        - 相关 时间记录 (relation) is empty
+
+        Returns:
+            True if processing was successful, False otherwise
+        """
+        try:
+            logger.info("Processing unlinked records for linking to '未记录' entries")
+
+            # Get all unlinked records
+            records = await self.notion_client.get_unlinked_records()
+            if not records:
+                logger.info("No unlinked records found")
+                return True
+
+            logger.info(f"Found {len(records)} unlinked records to process")
+
+            # Cache for '未记录' entries by date to avoid repeated lookups
+            unrecorded_cache: Dict[str, Optional[str]] = {}
+
+            linked_count = 0
+            skipped_count = 0
+
+            for record in records:
+                record_id = record.get('id')
+                properties = record.get('properties', {})
+
+                # Extract date from the record
+                date_prop = properties.get('时间段', {})
+                if date_prop.get('type') != 'date' or not date_prop.get('date'):
+                    logger.warning(f"Record {record_id} has no valid date, skipping")
+                    skipped_count += 1
+                    continue
+
+                date_start = date_prop['date'].get('start')
+                if not date_start:
+                    logger.warning(f"Record {record_id} has no start date, skipping")
+                    skipped_count += 1
+                    continue
+
+                # Extract just the date part (YYYY-MM-DD)
+                record_date = date_start.split('T')[0]
+
+                # Get or fetch the '未记录' entry for this date
+                if record_date not in unrecorded_cache:
+                    unrecorded_entry = await self.notion_client.get_unrecorded_entry_for_date(record_date)
+                    if unrecorded_entry:
+                        unrecorded_cache[record_date] = unrecorded_entry.get('id')
+                    else:
+                        # Create a new '未记录' entry if it doesn't exist
+                        logger.info(f"No '未记录' entry found for {record_date}, creating one...")
+                        new_unrecorded_id = await self.notion_client.create_unrecorded_entry(record_date)
+                        unrecorded_cache[record_date] = new_unrecorded_id
+
+                unrecorded_id = unrecorded_cache[record_date]
+
+                if not unrecorded_id:
+                    logger.error(f"Failed to get or create '未记录' entry for {record_date}, skipping record {record_id}")
+                    skipped_count += 1
+                    continue
+
+                # Link the record to the '未记录' entry
+                success = await self.notion_client.link_record_to_unrecorded(record_id, unrecorded_id)
+                if success:
+                    linked_count += 1
+                    logger.info(f"Linked record {record_id} to '未记录' entry for {record_date}")
+                else:
+                    logger.error(f"Failed to link record {record_id}")
+
+            logger.info(f"Unlinked records processing complete: {linked_count} linked, {skipped_count} skipped")
+            return True
+
+        except Exception as e:
+            logger.error(f"Error processing unlinked records: {str(e)}")
+            return False
+
     async def process_next_actions(self) -> bool:
         """
         Process and assess next action records with AI
-        
+
         Returns:
             True if processing was successful, False otherwise
         """
@@ -623,12 +704,22 @@ Assessment:"""
                 logger.info("Processing time records...")
                 time_success = await self.process_time_records(target_date)
                 success = success and time_success
-                
+
                 if time_success:
                     logger.info("Time record classification completed successfully")
                 else:
                     logger.error("Time record classification failed")
-            
+
+                # Link unlinked records to their daily '未记录' entries
+                logger.info("Processing unlinked records...")
+                link_success = await self.process_unlinked_records()
+                success = success and link_success
+
+                if link_success:
+                    logger.info("Unlinked records linking completed successfully")
+                else:
+                    logger.error("Unlinked records linking failed")
+
             # Process next actions
             if mode in ["next_actions", "both"]:
                 logger.info("Processing next actions...")
