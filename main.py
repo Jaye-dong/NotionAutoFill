@@ -15,6 +15,7 @@ from dotenv import load_dotenv
 
 from notion_client import NotionClient
 from openai_client import OpenAIClient
+from claude_client import ClaudeClient
 
 # Load environment variables from .env file
 load_dotenv()
@@ -42,30 +43,38 @@ class TimeRecordClassifier:
         self.notion_database_id = os.getenv('NOTION_DATABASE_ID')
         self.next_action_database_id = os.getenv('NEXT_ACTION_DATABASE_ID')
         
-        # OpenAI configuration
+        # OpenAI configuration (optional)
         self.openai_api_key = os.getenv('OPENAI_API_KEY')
         self.openai_model = os.getenv('OPENAI_MODEL', 'gpt-4o-mini')
         self.openai_base_url = os.getenv('OPENAI_BASE_URL')
-        
+
+        # Claude CLI configuration (used when no OpenAI key is set)
+        self.claude_model = os.getenv('CLAUDE_MODEL')  # optional override
+
         # Validate required configuration
         if not self.notion_token:
             raise ValueError("NOTION_TOKEN environment variable is required")
         if not self.notion_database_id:
             raise ValueError("NOTION_DATABASE_ID environment variable is required")
-        if not self.openai_api_key:
-            raise ValueError("OPENAI_API_KEY environment variable is required")
-        
+
         # Initialize clients
         self.notion_client = NotionClient(
-            self.notion_token, 
+            self.notion_token,
             self.notion_database_id,
             self.next_action_database_id
         )
-        self.openai_client = OpenAIClient(
-            api_key=self.openai_api_key,
-            model=self.openai_model,
-            base_url=self.openai_base_url
-        )
+
+        # Choose AI backend: OpenAI when key is present, else fall back to Claude CLI
+        if self.openai_api_key:
+            logger.info("Using OpenAI/compatible API for classification")
+            self.openai_client = OpenAIClient(
+                api_key=self.openai_api_key,
+                model=self.openai_model,
+                base_url=self.openai_base_url
+            )
+        else:
+            logger.info("OPENAI_API_KEY not set — using Claude CLI for classification")
+            self.openai_client = ClaudeClient(model=self.claude_model)
         
         logger.info("TimeRecordClassifier initialized")
 
