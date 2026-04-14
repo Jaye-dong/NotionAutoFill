@@ -752,6 +752,17 @@ Assessment:"""
             return False
 
 
+def _notion_api_reachable() -> bool:
+    """Quick check: can we reach api.notion.com directly?"""
+    import socket
+    try:
+        socket.setdefaulttimeout(3)
+        socket.getaddrinfo("api.notion.com", 443)
+        return True
+    except OSError:
+        return False
+
+
 async def main():
     """Main entry point"""
     parser = argparse.ArgumentParser(description="Notion Auto-Classification Tool")
@@ -767,14 +778,22 @@ async def main():
         default='time',
         help='Processing mode: "time" for time records, "next_actions" for next actions, "both" for both databases. Defaults to "time".'
     )
-    
+
     args = parser.parse_args()
-    
+
+    # If Notion API is unreachable (e.g. inside Claude Code sandbox), fall back to
+    # the MCP-based runner which uses the `claude` CLI and Notion MCP tools instead.
+    if not _notion_api_reachable():
+        logger.info("Notion API unreachable — falling back to Claude MCP runner")
+        from mcp_runner import run as mcp_run
+        success = mcp_run()
+        sys.exit(0 if success else 1)
+
     try:
         classifier = TimeRecordClassifier()
         success = await classifier.run(args.date, args.mode)
         sys.exit(0 if success else 1)
-        
+
     except Exception as e:
         logger.error(f"Failed to initialize classifier: {str(e)}")
         sys.exit(1)
